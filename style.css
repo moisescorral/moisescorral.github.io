@@ -171,9 +171,10 @@ h1 {
 
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(240px, 360px));
-  gap: 36px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  gap: 42px;
   justify-content: center;
+  align-items: start;
 }
 
 .book-card {

@@ -184,6 +184,10 @@ h1 {
   text-align: center;
   transition: all .35s ease;
   backdrop-filter: blur(6px);
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .book-card:hover {
@@ -300,4 +304,7 @@ h1 {
   .book-grid {
     grid-template-columns: 1fr;
   }
+  .book-card p {
+  flex-grow: 1;
+}
 }

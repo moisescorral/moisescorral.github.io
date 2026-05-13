@@ -178,21 +178,32 @@ h1 {
 }
 
 .book-card {
-  background: rgba(255,255,255,.035);
+  background: rgba(255,255,255,.03);
   border: 1px solid rgba(255,255,255,.08);
-  padding: 26px;
+  padding: 24px;
   text-align: center;
-  transition: .3s ease;
+  transition: all .35s ease;
+  backdrop-filter: blur(6px);
 }
 
 .book-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--line);
+  transform: translateY(-10px);
+  border-color: rgba(201,164,92,.45);
+  box-shadow: 0 20px 40px rgba(0,0,0,.45);
 }
 
 .book-cover {
-  height: 360px;
-  margin-bottom: 24px;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  margin-bottom: 22px;
+  border-radius: 4px;
+  box-shadow: 0 20px 35px rgba(0,0,0,.45);
+  transition: transform .35s ease;
+}
+
+.book-card:hover .book-cover {
+  transform: scale(1.02);
 }
 
 .placeholder {

@@ -544,6 +544,147 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
+@media (max-width: 768px) {
+
+  body {
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  .container,
+  .section,
+  .content,
+  .books-grid,
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 90px 0 50px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 11vw, 3.2rem);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .hero p,
+  .lead,
+  .subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    line-height: 1.15;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .section {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .books-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .book-card {
+    padding: 18px;
+  }
+
+  .book-card img,
+  .book-cover,
+  .cover {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: 0 auto 20px;
+    display: block;
+  }
+
+  .book-page,
+  .book-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .book-info {
+    text-align: left;
+  }
+
+  .btn,
+  .button,
+  .amazon-button {
+    width: 100%;
+    text-align: center;
+    padding: 14px 18px;
+    font-size: 0.95rem;
+  }
+
+  nav,
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  nav ul,
+  .nav-links {
+    gap: 14px;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero {
+    padding-top: 80px;
+  }
+
+  .section {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .book-card img,
+  .book-cover,
+  .cover {
+    max-width: 230px;
+  }
+
+  p {
+    font-size: 0.98rem;
+  }
+}
+
 }
 }

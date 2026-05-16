@@ -26,11 +26,15 @@
   </script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MSEDP8ESV"></script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
     gtag('config', 'G-5MSEDP8ESV');
   </script>
 </head>
@@ -38,6 +42,7 @@
 <body>
 
 <header class="header">
+
   <div class="logo">MC</div>
 
   <nav>
@@ -46,11 +51,13 @@
     <a href="#bio">Sobre mí</a>
     <a href="#contacto">Contacto</a>
   </nav>
+
 </header>
 
 <main id="inicio" class="hero">
 
   <section class="hero-text">
+
     <p class="eyebrow">Moisés</p>
 
     <h1>Corral</h1>
@@ -66,13 +73,16 @@
     <a href="#libros" class="button">
       Explorar libros
     </a>
+
   </section>
 
   <section class="hero-image">
+
     <img
       src="assets/moises.jpg"
       alt="Retrato de Moisés Corral"
     >
+
   </section>
 
 </main>
@@ -83,13 +93,20 @@
 
   <div class="book-grid">
 
+    <!-- RUSIA 03:14 -->
+
     <article class="book-card">
-      <img
-        class="book-cover"
-        src="assets/rusia0314.jpg"
-        alt="Rusia 03:14"
-        loading="lazy"
-      >
+
+      <a href="/rusia0314/" class="book-cover-link">
+
+        <img
+          class="book-cover"
+          src="assets/rusia0314.jpg"
+          alt="Rusia 03:14"
+          loading="lazy"
+        >
+
+      </a>
 
       <h3>Rusia 03:14</h3>
 
@@ -97,17 +114,32 @@
         Un thriller de misterio global, narrado con un ritmo tenso y cinematográfico. Una historia de fronteras desiertas, gobiernos al límite y personas comunes enfrentadas a un vacío imposible.
       </p>
 
-      <a
-        href="https://www.amazon.es/dp/B0G5Y6RNQC?tag=moisescorra01-21"
-        target="_blank"
-        rel="nofollow sponsored"
-        class="book-link"
-      >
-        Comprar en Amazon
-      </a>
+      <div class="book-buttons">
+
+        <a
+          href="/rusia0314/"
+          class="book-link secondary"
+        >
+          Entrar en la web
+        </a>
+
+        <a
+          href="https://www.amazon.es/dp/B0G5Y6RNQC?tag=moisescorra01-21"
+          target="_blank"
+          rel="nofollow sponsored"
+          class="book-link"
+        >
+          Comprar en Amazon
+        </a>
+
+      </div>
+
     </article>
 
+    <!-- REICH -->
+
     <article class="book-card">
+
       <img
         class="book-cover"
         src="assets/reich.jpg"
@@ -129,9 +161,13 @@
       >
         Comprar en Amazon
       </a>
+
     </article>
 
+    <!-- ISRAEL -->
+
     <article class="book-card">
+
       <img
         class="book-cover"
         src="assets/israel.jpg"
@@ -144,7 +180,7 @@
       </h3>
 
       <p>
-        Una inmersión profunda y detallada en el conflicto entre Israel y Palestina, explorando sus raíces históricas y los eventos más recientes. Con un enfoque riguroso, accesible y, sobre todo, completo.
+        Una inmersión profunda y detallada en el conflicto entre Israel y Palestina, explorando sus raíces históricas y los eventos más recientes.
       </p>
 
       <a
@@ -155,9 +191,13 @@
       >
         Comprar en Amazon
       </a>
+
     </article>
 
+    <!-- CAMINO -->
+
     <article class="book-card">
+
       <img
         class="book-cover"
         src="assets/camino.jpg"
@@ -168,7 +208,7 @@
       <h3>El camino del vendedor</h3>
 
       <p>
-        Un libro que busca ensalzar la figura del comercial y despertar vocaciones, descubriendo todos los secretos del mundo comercial y las distintas fases de la venta.
+        Un libro que busca ensalzar la figura del comercial y despertar vocaciones, descubriendo todos los secretos del mundo comercial.
       </p>
 
       <a
@@ -179,9 +219,13 @@
       >
         Comprar en Amazon
       </a>
+
     </article>
 
+    <!-- ARTE DE LA GUERRA -->
+
     <article class="book-card">
+
       <img
         class="book-cover"
         src="assets/arteguerra.jpg"
@@ -194,7 +238,7 @@
       </h3>
 
       <p>
-        Una edición comentada, vista desde los ojos del siglo XXI, sobre uno de los libros más influyentes de la historia de la Humanidad.
+        Una edición comentada, vista desde los ojos del siglo XXI, sobre uno de los libros más influyentes de la historia.
       </p>
 
       <a
@@ -205,6 +249,7 @@
       >
         Comprar en Amazon
       </a>
+
     </article>
 
   </div>

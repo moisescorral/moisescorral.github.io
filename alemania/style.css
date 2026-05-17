@@ -10,19 +10,16 @@
   --red:#9d261d;
   --red2:#c0392b;
   --gold:#c9a45c;
+  --bronze:#6b5332;
   --line:rgba(23,19,15,.18);
   --line-light:rgba(241,228,207,.18);
   --light:rgba(255,248,234,.86);
   --shadow:0 24px 80px rgba(0,0,0,.35);
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
@@ -47,19 +44,8 @@ body::before{
   opacity:.45;
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-img{
-  max-width:100%;
-  display:block;
-}
-
-/* =========================
-   BANNER FICCIÓN
-========================= */
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
 
 .fiction-banner{
   position:fixed;
@@ -80,13 +66,7 @@ img{
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-.fiction-banner span:first-child{
-  color:#d64735;
-}
-
-/* =========================
-   HEADER / NAV
-========================= */
+.fiction-banner span:first-child{color:#d64735}
 
 .site-header{
   min-height:100vh;
@@ -128,10 +108,6 @@ img{
   transform:rotate(45deg);
 }
 
-.brand-mark + span{
-  transform:none;
-}
-
 .brand strong{
   font-size:22px;
   text-transform:uppercase;
@@ -157,9 +133,7 @@ img{
   letter-spacing:.08em;
 }
 
-.nav-links a{
-  position:relative;
-}
+.nav-links a{position:relative}
 
 .nav-links a::after{
   content:"";
@@ -172,9 +146,7 @@ img{
   transition:.25s;
 }
 
-.nav-links a:hover::after{
-  width:100%;
-}
+.nav-links a:hover::after{width:100%}
 
 .home-link{
   border:1px solid var(--line);
@@ -188,10 +160,6 @@ img{
   font-size:26px;
   color:var(--ink);
 }
-
-/* =========================
-   HERO
-========================= */
 
 .hero{
   min-height:calc(100vh - 128px);
@@ -220,9 +188,7 @@ img{
   letter-spacing:-.04em;
 }
 
-.hero h1 span{
-  color:#fff3db;
-}
+.hero h1 span{color:#fff3db}
 
 .lead{
   font-size:clamp(18px,2.4vw,27px);
@@ -262,9 +228,7 @@ img{
   transform:translateY(-2px);
 }
 
-.btn-ghost{
-  color:var(--paper);
-}
+.btn-ghost{color:var(--paper)}
 
 .btn-ghost:hover{
   background:rgba(255,255,255,.08);
@@ -279,9 +243,7 @@ img{
   transform:rotate(-1deg);
 }
 
-.small{
-  font-size:14px;
-}
+.small{font-size:14px}
 
 .hero-book{
   justify-self:center;
@@ -310,19 +272,13 @@ img{
   box-shadow:var(--shadow);
 }
 
-/* =========================
-   SECCIONES GENERALES
-========================= */
-
 .section{
   padding:96px 5vw;
   background:var(--paper);
   position:relative;
 }
 
-.section:nth-of-type(even){
-  background:#e8d8bf;
-}
+.section:nth-of-type(even){background:#e8d8bf}
 
 .section-heading{
   max-width:960px;
@@ -357,9 +313,7 @@ img{
   align-items:center;
 }
 
-.feature-grid.reverse{
-  grid-template-columns:.9fr 1.1fr;
-}
+.feature-grid.reverse{grid-template-columns:.9fr 1.1fr}
 
 .text-panel,
 .official-card,
@@ -375,9 +329,7 @@ img{
   margin:0 0 18px;
 }
 
-.text-panel.compact p{
-  font-size:18px;
-}
+.text-panel.compact p{font-size:18px}
 
 .text-panel h3,
 .official-card h3,
@@ -427,10 +379,6 @@ blockquote{
   transform:rotate(-2deg);
 }
 
-/* =========================
-   IMÁGENES / ARCHIVO
-========================= */
-
 .image-card,
 .document-card{
   margin:0;
@@ -461,9 +409,7 @@ figcaption{
   color:var(--paper);
 }
 
-.dark .section-heading p{
-  color:#ff806d;
-}
+.dark .section-heading p{color:#ff806d}
 
 .archive-grid{
   max-width:1220px;
@@ -478,10 +424,6 @@ figcaption{
   color:var(--ink);
 }
 
-/* =========================
-   CRONOLOGÍA
-========================= */
-
 .timeline-section{
   position:relative;
   overflow:hidden;
@@ -492,7 +434,27 @@ figcaption{
 }
 
 .timeline-section .section-heading p{
-  color:#ff806d;
+
+  color:#d7b58f;
+
+  text-shadow:
+
+    0 1px 0 rgba(0,0,0,.55),
+
+    0 0 18px rgba(201,164,92,.25);
+
+}
+
+.timeline-section .section-heading h2{
+
+  color:#fff1d6;
+
+  text-shadow:
+
+    0 2px 0 rgba(0,0,0,.45),
+
+    0 0 28px rgba(201,164,92,.22);
+
 }
 
 .timeline-wrapper{
@@ -566,8 +528,7 @@ figcaption{
 
 .timeline-card{
   position:relative;
-  background:
-    linear-gradient(180deg,rgba(22,22,22,.98),rgba(10,10,10,.98));
+  background:linear-gradient(180deg,rgba(22,22,22,.98),rgba(10,10,10,.98));
   border:1px solid rgba(201,164,92,.25);
   padding:34px;
   overflow:hidden;
@@ -614,30 +575,12 @@ figcaption{
   opacity:.95;
 }
 
-.timeline-item.critical .timeline-card{
-  border-color:rgba(159,61,54,.55);
-}
+.timeline-item.critical .timeline-card{border-color:rgba(159,61,54,.55)}
+.timeline-item.hacked .timeline-card{background:linear-gradient(180deg,rgba(26,16,16,.98),rgba(10,10,10,.98))}
+.timeline-item.dark-event .timeline-card{background:linear-gradient(180deg,rgba(7,7,7,.98),rgba(0,0,0,.98))}
+.timeline-item.final .timeline-card{border-color:rgba(201,164,92,.55);box-shadow:0 0 50px rgba(201,164,92,.12)}
 
-.timeline-item.hacked .timeline-card{
-  background:linear-gradient(180deg,rgba(26,16,16,.98),rgba(10,10,10,.98));
-}
-
-.timeline-item.dark-event .timeline-card{
-  background:linear-gradient(180deg,rgba(7,7,7,.98),rgba(0,0,0,.98));
-}
-
-.timeline-item.final .timeline-card{
-  border-color:rgba(201,164,92,.55);
-  box-shadow:0 0 50px rgba(201,164,92,.12);
-}
-
-/* =========================
-   TECNOLOGÍA / MONUMENTOS
-========================= */
-
-.technology{
-  background:#f0e1cb;
-}
+.technology{background:#f0e1cb}
 
 .monumental-grid{
   max-width:1200px;
@@ -669,13 +612,8 @@ figcaption{
   pointer-events:none;
 }
 
-.monument-card:nth-child(even){
-  grid-template-columns:.85fr 1.15fr;
-}
-
-.monument-card:nth-child(even) figure{
-  order:2;
-}
+.monument-card:nth-child(even){grid-template-columns:.85fr 1.15fr}
+.monument-card:nth-child(even) figure{order:2}
 
 .monument-card figure{
   margin:0;
@@ -717,13 +655,8 @@ figcaption{
   color:#3d3328;
 }
 
-/* =========================
-   GUÍA / APÉNDICE
-========================= */
-
 .dossier{
-  background:
-    linear-gradient(180deg,#f1e4cf,#dbc8ab);
+  background:linear-gradient(180deg,#f1e4cf,#dbc8ab);
 }
 
 .guide-panel{
@@ -734,19 +667,6 @@ figcaption{
   padding:44px;
   box-shadow:0 18px 60px rgba(23,19,15,.12);
   position:relative;
-}
-
-.guide-panel::before{
-  content:"APÉNDICE";
-  position:absolute;
-  top:22px;
-  right:24px;
-  font-family:Arial,sans-serif;
-  font-size:12px;
-  letter-spacing:.18em;
-  color:var(--red);
-  border:1px solid rgba(157,38,29,.28);
-  padding:6px 10px;
 }
 
 .guide-lead{
@@ -784,10 +704,6 @@ figcaption{
   color:#4d4034;
 }
 
-/* =========================
-   RESISTENCIA / TERMINAL
-========================= */
-
 .resistance{
   background:#0d0c0b;
   color:var(--paper);
@@ -816,9 +732,7 @@ figcaption{
   margin:0 0 20px;
 }
 
-.terminal p{
-  font-size:20px;
-}
+.terminal p{font-size:20px}
 
 .glitch{
   position:relative;
@@ -846,12 +760,14 @@ figcaption{
   clip-path:inset(45% 0 0 0);
 }
 
-/* =========================
-   COMPRA
-========================= */
-
 .buy{
   background:linear-gradient(135deg,#efe0ca,#cbb79a);
+}
+
+.buy .eyebrow{
+  color:#6b5332;
+  text-shadow:0 1px 0 rgba(255,255,255,.25);
+  font-weight:700;
 }
 
 .buy h2{
@@ -872,10 +788,6 @@ figcaption{
   border:10px solid rgba(255,255,255,.18);
 }
 
-/* =========================
-   FOOTER
-========================= */
-
 .footer{
   background:#0d0c0b;
   color:#cdbda6;
@@ -891,10 +803,6 @@ figcaption{
   color:#f1e4cf;
 }
 
-/* =========================
-   ANIMACIONES
-========================= */
-
 .reveal{
   opacity:0;
   transform:translateY(22px);
@@ -906,30 +814,13 @@ figcaption{
   transform:translateY(0);
 }
 
-.delay-1{
-  transition-delay:.12s;
-}
-
-.delay-2{
-  transition-delay:.22s;
-}
-
-.delay-3{
-  transition-delay:.32s;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
+.delay-1{transition-delay:.12s}
+.delay-2{transition-delay:.22s}
+.delay-3{transition-delay:.32s}
 
 @media(max-width:1100px){
-  .nav-links{
-    gap:16px;
-  }
-
-  .brand strong{
-    font-size:18px;
-  }
+  .nav-links{gap:16px}
+  .brand strong{font-size:18px}
 }
 
 @media(max-width:980px){
@@ -939,9 +830,7 @@ figcaption{
     gap:4px;
   }
 
-  .site-header{
-    padding-top:0;
-  }
+  .site-header{padding-top:0}
 
   .nav{
     top:0;
@@ -949,9 +838,7 @@ figcaption{
     min-height:78px;
   }
 
-  .menu-toggle{
-    display:block;
-  }
+  .menu-toggle{display:block}
 
   .nav-links{
     position:absolute;
@@ -966,9 +853,7 @@ figcaption{
     border-top:1px solid var(--line);
   }
 
-  .nav-links.open{
-    display:flex;
-  }
+  .nav-links.open{display:flex}
 
   .hero,
   .intro-grid,
@@ -978,17 +863,9 @@ figcaption{
     grid-template-columns:1fr;
   }
 
-  .hero{
-    padding-top:12vw;
-  }
-
-  .hero-book{
-    order:-1;
-  }
-
-  .hero-book img{
-    max-height:56vh;
-  }
+  .hero{padding-top:12vw}
+  .hero-book{order:-1}
+  .hero-book img{max-height:56vh}
 
   .archive-grid,
   .cards-grid,
@@ -1001,13 +878,9 @@ figcaption{
     grid-template-columns:1fr;
   }
 
-  .monument-card:nth-child(even) figure{
-    order:0;
-  }
+  .monument-card:nth-child(even) figure{order:0}
 
-  .timeline-wrapper::before{
-    left:14px;
-  }
+  .timeline-wrapper::before{left:14px}
 
   .timeline-item{
     grid-template-columns:1fr;
@@ -1016,9 +889,7 @@ figcaption{
     margin-bottom:60px;
   }
 
-  .timeline-item::before{
-    left:14px;
-  }
+  .timeline-item::before{left:14px}
 
   .timeline-item:nth-child(even) .timeline-card,
   .timeline-item:nth-child(even) .timeline-year{
@@ -1031,35 +902,16 @@ figcaption{
     padding-top:0;
   }
 
-  .timeline-card{
-    padding:28px;
-  }
-
-  .timeline-card h3{
-    font-size:1.5rem;
-  }
-
-  .brand small{
-    font-size:11px;
-  }
+  .timeline-card{padding:28px}
+  .timeline-card h3{font-size:1.5rem}
+  .brand small{font-size:11px}
 }
 
 @media(max-width:620px){
-  .section{
-    padding:70px 5vw;
-  }
-
-  .hero{
-    min-height:auto;
-  }
-
-  .hero-actions{
-    flex-direction:column;
-  }
-
-  .btn{
-    width:100%;
-  }
+  .section{padding:70px 5vw}
+  .hero{min-height:auto}
+  .hero-actions{flex-direction:column}
+  .btn{width:100%}
 
   .archive-grid,
   .cards-grid,
@@ -1082,9 +934,7 @@ figcaption{
     font-size:17px;
   }
 
-  .guide-lead{
-    font-size:22px;
-  }
+  .guide-lead{font-size:22px}
 
   .hero-book::before{
     right:0;
@@ -1092,23 +942,10 @@ figcaption{
     font-size:11px;
   }
 
-  .brand-mark{
-    display:none;
-  }
+  .brand-mark{display:none}
+  .brand strong{font-size:16px}
 
-  .brand strong{
-    font-size:16px;
-  }
-
-  .monument-card{
-    padding:18px;
-  }
-
-  .monument-card img{
-    min-height:240px;
-  }
-
-  .monument-card p{
-    font-size:17px;
-  }
+  .monument-card{padding:18px}
+  .monument-card img{min-height:240px}
+  .monument-card p{font-size:17px}
 }

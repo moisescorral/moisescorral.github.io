@@ -671,66 +671,143 @@ img{
 
   position:relative;
 
-  background:url('assets/mesa-estrategia.jpg') center/cover;
+  width:100%;
 
-  padding:125px 6vw;
+  min-height:720px;
 
   overflow:hidden;
+
+  display:flex;
+
+  align-items:center;
+
+  background:#2a0606;
+
+}
+
+.buy-bg{
+
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+
+  height:100%;
+
+}
+
+.buy-bg img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  object-position:center;
+
+  filter:brightness(.82);
 
 }
 
 .buy-overlay{
+
   position:absolute;
 
   inset:0;
 
   background:
-    linear-gradient(90deg,rgba(70,12,10,.94),rgba(20,8,7,.70));
+
+    linear-gradient(
+
+      90deg,
+
+      rgba(15,7,5,.88) 0%,
+
+      rgba(15,7,5,.68) 32%,
+
+      rgba(15,7,5,.22) 58%,
+
+      rgba(15,7,5,.12) 100%
+
+    );
+
 }
 
 .buy-content{
+
   position:relative;
-  z-index:2;
 
-  display:grid;
+  z-index:5;
 
-  grid-template-columns:260px 1fr;
+  max-width:620px;
 
-  gap:60px;
+  padding-left:8vw;
 
-  align-items:center;
-
-  max-width:1100px;
-
-  margin:0 auto;
-}
-
-.buy-cover{
-  filter:drop-shadow(0 35px 70px rgba(0,0,0,.45));
 }
 
 .gold-light{
-  color:#f0c98d;
+
+  color:#d7a86e;
+
+  font-family:Arial,sans-serif;
+
+  text-transform:uppercase;
+
+  letter-spacing:.18em;
+
+  font-size:12px;
+
+  margin-bottom:18px;
+
+}
+
+.buy-copy h2{
+
+  font-size:clamp(52px,5vw,88px);
+
+  line-height:.95;
+
+  color:#f4ead8;
+
+  margin:0 0 28px;
+
+  font-weight:400;
+
 }
 
 .buy-copy p{
-  font-size:20px;
 
-  color:#ead7bd;
+  font-size:21px;
 
-  max-width:720px;
+  line-height:1.7;
+
+  color:#eadcc7;
+
+  max-width:560px;
+
 }
 
 .buy-btn{
+
   display:inline-flex;
 
-  margin-top:28px;
+  align-items:center;
 
-  background:#e6d0a5;
+  justify-content:center;
 
-  color:#111;
+  margin-top:34px;
 
-  padding:17px 30px;
+  min-height:58px;
+
+  padding:0 34px;
+
+  background:#8e2118;
+
+  color:#fff;
+
+  border:1px solid rgba(255,255,255,.10);
 
   font-family:Arial,sans-serif;
 
@@ -740,15 +817,164 @@ img{
 
   font-size:12px;
 
+  font-weight:700;
+
   transition:.25s ease;
+
 }
 
 .buy-btn:hover{
+
   transform:translateY(-2px);
 
-  filter:brightness(1.05);
+  background:#a2261d;
+
 }
 
+@media(max-width:900px){
+
+  .buy{
+
+    min-height:auto;
+
+  }
+
+  .buy-overlay{
+
+    background:
+
+      linear-gradient(
+
+        180deg,
+
+        rgba(10,6,5,.78) 0%,
+
+        rgba(10,6,5,.84) 100%
+
+      );
+
+  }
+
+  .buy-content{
+
+    padding:80px 6vw;
+
+    max-width:100%;
+
+  }
+
+  .buy-copy h2{
+
+    font-size:52px;
+
+  }
+
+  .buy-copy p{
+
+    font-size:18px;
+
+  }
+
+  .buy-btn{
+
+    width:100%;
+
+  }
+
+}
+/* LEGACY SECTION */
+
+.legacy-section{
+  background:#efe4d0;
+  color:#18130f;
+  padding:110px 6vw;
+}
+
+.legacy-copy{
+  max-width:900px;
+  margin:0 auto 70px;
+  text-align:center;
+}
+
+.legacy-copy h2{
+  font-size:clamp(42px,5vw,78px);
+  line-height:1.02;
+  margin:20px 0 28px;
+  font-weight:400;
+}
+
+.legacy-copy p{
+  font-size:20px;
+  color:#413629;
+  max-width:760px;
+  margin:0 auto 22px;
+}
+
+.legacy-books{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:50px;
+  flex-wrap:wrap;
+}
+
+.legacy-book{
+  text-align:center;
+}
+
+.legacy-book img{
+  width:280px;
+  border-radius:4px;
+  box-shadow:0 30px 80px rgba(0,0,0,.18);
+  transition:.35s ease;
+}
+
+.old-book img{
+  transform:rotate(-6deg);
+  opacity:.88;
+}
+
+.new-book img{
+  transform:rotate(5deg) scale(1.04);
+}
+
+.legacy-book img:hover{
+  transform:scale(1.05);
+}
+
+.legacy-book span{
+  display:block;
+  margin-top:18px;
+  font-family:Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:11px;
+  color:#7b5d3b;
+}
+
+.legacy-arrow{
+  font-size:70px;
+  color:#9f7a4d;
+  font-weight:300;
+}
+
+@media(max-width:900px){
+
+  .legacy-books{
+    flex-direction:column;
+    gap:28px;
+  }
+
+  .legacy-arrow{
+    transform:rotate(90deg);
+    font-size:50px;
+  }
+
+  .legacy-book img{
+    width:220px;
+  }
+
+}
 /* ===================================================== */
 /* FOOTER */
 /* ===================================================== */
@@ -925,13 +1151,58 @@ img{
 
 @media(max-width:560px){
 
-  .seal{
-    width:38px;
-    height:38px;
+.seal{
 
-    font-size:18px;
-  }
+  width:44px;
 
+  height:44px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:#5b1716;
+
+  border:1px solid rgba(226,195,138,.35);
+
+  color:#f3d7c2;
+
+  font-size:24px;
+
+  font-weight:700;
+
+  border-radius:3px;
+
+  box-shadow:
+
+    0 10px 24px rgba(0,0,0,.28),
+
+    inset 0 1px 0 rgba(255,255,255,.06);
+
+  transition:.25s ease;
+
+}
+.seal-kanji{
+
+  font-family:
+
+    "Noto Serif SC",
+
+    "Songti SC",
+
+    serif;
+
+}
+
+.seal:hover{
+
+  transform:translateY(-2px);
+
+  background:#71201d;
+
+}
   .chapters-grid,
   .strategy-grid{
     grid-template-columns:1fr;

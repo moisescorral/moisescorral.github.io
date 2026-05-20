@@ -3,3 +3,36 @@
 3. Nuevo contenido con imágenes premium
 4. Mejorar el SEO 
 5. Añadir otros libros del autor
+
+
+
+-------
+1. Reducir un poco las tarjetas de lecturas
+    Hay textos muy largos y algunas cards pueden quedar demasiado altas. Ideal: mostrar 1-2 párrafos y botón “Leer más”.
+2. Añadir enlaces internos visibles dentro de lecturas
+    Ya aparecen algunos: El camino del vendedor, Historia del Reich, Rusia 03:14, Israel y Palestina. Eso está muy bien. Mantén ese camino.
+3. Revisar enlaces Amazon repetidos
+    Veo que algunos “Ver en Amazon” parecen usar el mismo enlace corto en varios libros. Comprueba especialmente:
+    * Yo, Claudio
+    * El médico
+    * Una breve historia de casi todo
+        Que cada uno vaya al libro correcto.
+4. Añadir una frase final de cierre
+    Después de las 12 lecturas pondría algo tipo:
+    “De todos ellos nace una misma obsesión: entender cómo las ideas, las decisiones y los mundos posibles pueden cambiar la vida de las personas.”
+5. Crear página legal mínima
+    Para afiliados Amazon, yo pondría una página sencilla:
+    * /aviso-legal/
+    * o una nota en footer:
+        “Como afiliado de Amazon, puedo obtener ingresos por compras adscritas.”
+6. Revisar sitemap.xml en Search Console
+    La home está bien estructurada. Ahora asegúrate de que el sitemap incluye:
+    * /
+    * /rusia0314/
+    * /alemania/
+    * /israel/
+    * /vendedor/
+    * /sun/
+7. Lo más importante ahora: no tocar demasiado
+    Ya no estás en fase de construir. Estás en fase de pulir, medir e indexar.
+    Yo subiría esto, pediría indexación en Search Console y esperaría unos días.

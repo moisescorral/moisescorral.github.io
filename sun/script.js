@@ -16,3 +16,12 @@ const observer = new IntersectionObserver(entries => {
   });
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.chapter-card').forEach(card => {
+
+  card.addEventListener('click', () => {
+
+    card.classList.toggle('flipped');
+
+  });
+
+});

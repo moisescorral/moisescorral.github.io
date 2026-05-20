@@ -1226,5 +1226,7 @@ img{
 
     justify-content:center;
   }
-
+.chapter-card.flipped .chapter-inner {
+  transform: rotateY(180deg);
+}
 }

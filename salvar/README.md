@@ -11,7 +11,9 @@ Campo la Carrera.
 - `index.html` — contenido y estructura.
 - `css/styles.css` — dirección visual y diseño adaptable.
 - `js/app.js` — navegación, animaciones y recorrido narrativo.
-- `assets/continuum-hero.png` — imagen principal generada para el proyecto.
+- `assets/promohero.avif` — campaña corporativa optimizada de vida eterna.
+- `assets/continuum-hero.png` — copia PNG de respaldo.
+- `assets/campo-la-carrera-hero.png` — imagen de la revelación narrativa.
 - `assets/mapa-narrativo.png` — esquema de referencia del recorrido.
 
 No requiere instalación. Las tipografías web usan Google Fonts y disponen de

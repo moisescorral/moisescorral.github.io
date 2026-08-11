@@ -24,7 +24,26 @@
   });
 
   const form=$('#reservationForm');
-  form.addEventListener('submit',e=>{e.preventDefault();const name=new FormData(form).get('name').toString().split(' ')[0];$('#formStatus').textContent='SOLICITUD '+Math.floor(10000+Math.random()*89999)+' REGISTRADA. BIENVENIDO/A, '+name.toUpperCase()+'.';$('#spots').textContent='126';toast('El Directorio ha recibido tu solicitud');form.querySelector('button').disabled=true;body.classList.add('degrading')});
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const formData=new FormData(form), status=$('#formStatus'), button=form.querySelector('button[type="submit"]');
+    if(formData.get('_honey'))return;
+    const name=formData.get('name').toString().trim().split(/\s+/)[0];
+    const payload=Object.fromEntries(formData.entries());
+    payload.consentimiento_novedades=$('#bookConsent').checked?'Sí':'No';
+    payload.fecha_solicitud=new Date().toISOString();
+    button.disabled=true;button.classList.add('sending');status.classList.remove('error');status.textContent='TRANSMITIENDO SOLICITUD…';
+    try{
+      const endpoint=form.action.replace('https://formsubmit.co/','https://formsubmit.co/ajax/');
+      const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
+      const result=await response.json();
+      if(!response.ok||result.success===false)throw new Error('Submission failed');
+      status.textContent='SOLICITUD '+Math.floor(10000+Math.random()*89999)+' REGISTRADA. BIENVENIDO/A, '+name.toUpperCase()+'.';
+      $('#spots').textContent='126';toast('El Directorio ha recibido tu solicitud');form.reset();body.classList.add('degrading');
+    }catch(error){
+      status.classList.add('error');status.textContent='NO SE HA PODIDO ENVIAR. REVISA TU CONEXIÓN E INTÉNTALO DE NUEVO.';button.disabled=false;
+    }finally{button.classList.remove('sending')}
+  });
 
   const breach=$('#breach'), bButton=$('#breachButton'), iBar=$('#integrityBar'), iVal=$('#integrityValue'), sMsg=$('#systemMessage'), bTitle=$('.breach-title'), bHidden=$('#breachHidden'); let breachStarted=false;
   const breachObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting&&!breachStarted){breachStarted=true;runBreach()}}),{threshold:.55}); breachObserver.observe(breach);

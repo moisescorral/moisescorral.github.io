@@ -272,10 +272,21 @@
         <h2>Tu lugar en el<br>futuro empieza aquí.</h2>
         <p>Déjanos tus datos y un comercial de la Delegación más cercana se pondrá en contacto contigo. Quedan <strong id="spots">127</strong> plazas en este ciclo.</p>
       </div>
-      <form class="reservation-form reveal" id="reservationForm">
+      <form class="reservation-form reveal" id="reservationForm" action="https://formsubmit.co/contacto@moisescorral.es" method="POST">
+        <input type="hidden" name="_subject" value="Nueva solicitud de acceso a CONTINUUM">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_url" value="https://moisescorral.es/salvar/index.html">
+        <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label>Nombre completo<input required name="name" autocomplete="name" placeholder="Tu nombre"></label>
         <label>Correo electrónico<input required name="email" autocomplete="email" type="email" placeholder="tu@correo.com"></label>
-        <label class="consent"><input required type="checkbox"><span>Acepto la evaluación de compatibilidad del Directorio.</span></label>
+        <div class="consent-group">
+          <label class="consent"><input required name="consentimiento_datos" value="Sí" type="checkbox"><span>Autorizo el tratamiento de mis datos para gestionar esta solicitud de acceso.</span></label>
+          <label class="consent optional"><input id="bookConsent" name="consentimiento_novedades" value="Sí" type="checkbox"><span>Quiero recibir por correo novedades sobre <em>Salvar el cielo</em> y su lanzamiento. Podré retirar mi consentimiento en cualquier momento.</span></label>
+        </div>
+        <details class="form-privacy">
+          <summary>Información sobre protección de datos</summary>
+          <p><strong>Responsable:</strong> Moisés Corral. <strong>Finalidades:</strong> gestionar la solicitud y, únicamente si marcas la casilla opcional, enviarte novedades de <em>Salvar el cielo</em>. <strong>Base jurídica:</strong> tu consentimiento. El formulario se tramita mediante FormSubmit. Puedes retirar el consentimiento y ejercer tus derechos de acceso, rectificación o supresión escribiendo a <a href="mailto:contacto@moisescorral.es">contacto@moisescorral.es</a>.</p>
+        </details>
         <button class="button button-primary submit-button" type="submit">Solicitar acceso <span>→</span></button>
         <p class="form-status" id="formStatus" aria-live="polite"></p>
       </form>

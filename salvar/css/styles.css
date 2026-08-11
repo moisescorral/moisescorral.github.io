@@ -67,3 +67,21 @@
 @media(max-width:900px){.mobility-visual{width:100%;min-height:0;aspect-ratio:16/9}}
 @media(max-width:600px){.mobility-visual{height:auto;min-height:340px;aspect-ratio:auto}.mobility-visual>img{object-position:55% center}.mobility-legend{left:14px;right:14px;bottom:12px;grid-template-columns:1fr 1fr;gap:7px 14px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* Formulario de solicitud y consentimiento */
+.reservation-form>input[type="hidden"],.form-honey{display:none!important}
+.consent-group{display:grid;gap:12px;padding-top:2px}
+.reservation-form .consent{align-items:flex-start;margin:0;color:#a8c2cb}
+.reservation-form .consent input{flex:0 0 auto;width:17px;height:17px;margin:1px 0 0;accent-color:var(--cyan)}
+.reservation-form .consent span{font:10px/1.55 'Inter',sans-serif;letter-spacing:0;text-transform:none}
+.reservation-form .consent.optional{color:#7f9ca7}
+.reservation-form .consent em{color:#c8e1e8}
+.form-privacy{margin:0;border-top:1px solid rgba(255,255,255,.1);padding-top:12px;color:#6f8c97}
+.form-privacy summary{cursor:pointer;color:#8db2bf;font:9px 'Space Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
+.form-privacy p{margin:10px 0 0;font:9px/1.65 'Space Mono',monospace}
+.form-privacy strong{color:#8da8b2;font-weight:400}
+.form-privacy a{color:var(--cyan);border-bottom:1px solid rgba(124,231,255,.35)}
+.submit-button:disabled{cursor:wait;opacity:.58}
+.submit-button.sending span{animation:submitPulse .8s ease-in-out infinite alternate}
+.form-status.error{color:var(--coral)}
+@keyframes submitPulse{to{opacity:.2}}

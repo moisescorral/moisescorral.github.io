@@ -27,17 +27,14 @@
   form.addEventListener('submit',async e=>{
     e.preventDefault();
     const formData=new FormData(form), status=$('#formStatus'), button=form.querySelector('button[type="submit"]');
-    if(formData.get('_honey'))return;
+    if(formData.get('_gotcha'))return;
     const name=formData.get('name').toString().trim().split(/\s+/)[0];
-    const payload=Object.fromEntries(formData.entries());
-    payload.consentimiento_novedades=$('#bookConsent').checked?'Sí':'No';
-    payload.fecha_solicitud=new Date().toISOString();
+    formData.set('consentimiento_novedades',$('#bookConsent').checked?'Sí':'No');
+    formData.set('fecha_solicitud',new Date().toISOString());
     button.disabled=true;button.classList.add('sending');status.classList.remove('error');status.textContent='TRANSMITIENDO SOLICITUD…';
     try{
-      const endpoint=form.action.replace('https://formsubmit.co/','https://formsubmit.co/ajax/');
-      const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
-      const result=await response.json();
-      if(!response.ok||result.success===false)throw new Error('Submission failed');
+      const response=await fetch(form.action,{method:'POST',headers:{'Accept':'application/json'},body:formData});
+      if(!response.ok)throw new Error('Submission failed');
       status.textContent='SOLICITUD '+Math.floor(10000+Math.random()*89999)+' REGISTRADA. BIENVENIDO/A, '+name.toUpperCase()+'.';
       $('#spots').textContent='126';toast('El Directorio ha recibido tu solicitud');form.reset();body.classList.add('degrading');
     }catch(error){

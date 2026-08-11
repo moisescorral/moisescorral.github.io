@@ -18,9 +18,9 @@
   const sound=$('#soundButton'); sound.addEventListener('click',()=>{const on=sound.classList.toggle('on');$('b',sound).textContent=on?'ON':'OFF';toast(on?'Ambiente de CONTINUUM activado':'Ambiente silenciado')});
   const toastEl=$('#toast'); let toastTimer; function toast(text){toastEl.textContent=text;toastEl.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toastEl.classList.remove('show'),2600)}
 
-  $('#jimmyButton').addEventListener('click',()=>{
-    $('#jimmyCard').classList.add('corrupt'); const answer=$('#jimmyAnswer'); answer.textContent='RESPUESTA AUTOMÁTICA: No preguntes por Campo la Carrera. — J.';
-    body.classList.add('degrading'); setTimeout(()=>{$('#jimmyCard').classList.remove('corrupt')},900);
+  $('#thomasButton').addEventListener('click',()=>{
+    $('#thomasCard').classList.add('corrupt'); const answer=$('#thomasAnswer'); answer.textContent='RESPUESTA AUTOMÁTICA: No preguntes por Campo la Carrera. — T.';
+    body.classList.add('degrading'); setTimeout(()=>{$('#thomasCard').classList.remove('corrupt')},900);
   });
 
   const form=$('#reservationForm');
@@ -35,7 +35,7 @@
     {t:3500,v:37,msg:'ACCESO NO AUTORIZADO: /CAMPO_LA_CARRERA'},
     {t:4600,v:12,msg:'LA VERSIÓN OFICIAL NO ES LA HISTORIA COMPLETA'}
   ];
-  function runBreach(){body.classList.add('degrading');stages.forEach(stage=>setTimeout(()=>{iBar.style.width=stage.v+'%';iBar.style.background=stage.v<50?'#ff6b5c':'#7ce7ff';iVal.textContent=stage.v+'%';sMsg.textContent=stage.msg;if(stage.v===37){breach.classList.add('active');bTitle.dataset.text='NO MIRES ARRIBA.';bTitle.textContent='NO MIRES ARRIBA.';bHidden.textContent='Jimmy dejó una copia debajo del sistema.'}if(stage.v===12){bTitle.dataset.text='RECUPERA LA VERDAD.';bTitle.textContent='RECUPERA LA VERDAD.';bHidden.textContent='Archivo CLC-07 localizado. Integridad parcial.';bButton.disabled=false}},stage.t))}
+  function runBreach(){body.classList.add('degrading');stages.forEach(stage=>setTimeout(()=>{iBar.style.width=stage.v+'%';iBar.style.background=stage.v<50?'#ff6b5c':'#7ce7ff';iVal.textContent=stage.v+'%';sMsg.textContent=stage.msg;if(stage.v===37){breach.classList.add('active');bTitle.dataset.text='NO MIRES ARRIBA.';bTitle.textContent='NO MIRES ARRIBA.';bHidden.textContent='Thomas dejó una copia debajo del sistema.'}if(stage.v===12){bTitle.dataset.text='RECUPERA LA VERDAD.';bTitle.textContent='RECUPERA LA VERDAD.';bHidden.textContent='Archivo CLC-07 localizado. Integridad parcial.';bButton.disabled=false}},stage.t))}
 
   bButton.addEventListener('click',()=>{const campo=$('#campo');campo.classList.add('open');campo.setAttribute('aria-hidden','false');$('#continuum').style.display='none';scrollTo(0,0);history.pushState({campo:true},'', '#campo');toast('Archivo CLC-07 recuperado')});
   $('#returnButton').addEventListener('click',()=>{const campo=$('#campo');campo.classList.remove('open');campo.setAttribute('aria-hidden','true');$('#continuum').style.display='block';scrollTo(0,$('#breach').offsetTop);history.replaceState({},'', '#breach')});

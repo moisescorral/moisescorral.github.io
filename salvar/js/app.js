@@ -53,7 +53,7 @@
   ];
   function runBreach(){body.classList.add('degrading');stages.forEach(stage=>setTimeout(()=>{iBar.style.width=stage.v+'%';iBar.style.background=stage.v<50?'#ff6b5c':'#7ce7ff';iVal.textContent=stage.v+'%';sMsg.textContent=stage.msg;if(stage.v===37){breach.classList.add('active');bTitle.dataset.text='NO MIRES ARRIBA.';bTitle.textContent='NO MIRES ARRIBA.';bHidden.textContent='Thomas dejó una copia debajo del sistema.'}if(stage.v===12){bTitle.dataset.text='RECUPERA LA VERDAD.';bTitle.textContent='RECUPERA LA VERDAD.';bHidden.textContent='Archivo CLC-07 localizado. Integridad parcial.';bButton.disabled=false}},stage.t))}
 
-  bButton.addEventListener('click',()=>{const campo=$('#campo');campo.classList.add('open');campo.setAttribute('aria-hidden','false');$('#continuum').style.display='none';scrollTo(0,0);history.pushState({campo:true},'', '#campo');toast('Archivo CLC-07 recuperado')});
+  bButton.addEventListener('click',()=>{location.href='libro/'});
   $('#returnButton').addEventListener('click',()=>{const campo=$('#campo');campo.classList.remove('open');campo.setAttribute('aria-hidden','true');$('#continuum').style.display='block';scrollTo(0,$('#breach').offsetTop);history.replaceState({},'', '#breach')});
   addEventListener('popstate',()=>{if(location.hash!=='#campo'&&$('#campo').classList.contains('open'))$('#returnButton').click()});
 

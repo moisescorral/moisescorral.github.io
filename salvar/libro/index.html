@@ -19,6 +19,93 @@
     @media (max-width: 900px) { .mobile-menu a { font-size: 12px; } }
     @media (max-width: 600px) { .premise h2 { font-size: 34px; } }
 
+    /* Puertas de regreso al universo de CONTINUUM y a la web del autor */
+    .site-head{gap:clamp(14px,2.2vw,34px)}
+    .site-head nav{gap:clamp(12px,1.7vw,26px)}
+    .external-nav{display:flex;align-items:center;gap:8px}
+    .external-nav .destination-link{
+      display:inline-flex;
+      align-items:center;
+      min-height:36px;
+      padding:9px 12px;
+      border:1px solid rgba(213,142,119,.68);
+      font:8px 'Space Mono',monospace;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      white-space:nowrap;
+      transition:background .25s ease,color .25s ease,box-shadow .25s ease;
+    }
+    .external-nav .continuum-link{
+      border-color:#d77559;
+      background:#d77559;
+      color:#11110f;
+      box-shadow:0 0 22px rgba(215,117,89,.16);
+    }
+    .external-nav .author-link{color:#eee9dc}
+    .external-nav .continuum-link:hover,.external-nav .continuum-link:focus-visible{
+      background:#eee9dc;
+      border-color:#eee9dc;
+    }
+    .external-nav .author-link:hover,.external-nav .author-link:focus-visible{
+      background:#eee9dc;
+      border-color:#eee9dc;
+      color:#11110f;
+    }
+    .destination-link:focus-visible,.cover-actions a:focus-visible,.mobile-destination:focus-visible{
+      outline:2px solid #d77559;
+      outline-offset:3px;
+    }
+    .cover-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+    .cover-actions a{
+      display:inline-flex;
+      justify-content:space-between;
+      gap:34px;
+      min-width:205px;
+      padding:16px 18px;
+      border:1px solid #d77559;
+      font:9px 'Space Mono',monospace;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      transition:background .25s ease,color .25s ease;
+    }
+    .cover-actions a:hover{background:#d77559;color:#111}
+    .cover-actions .cover-author{background:#eee9dc;border-color:#eee9dc;color:#11110f}
+    .cover-actions .cover-author:hover{background:#d77559;border-color:#d77559}
+    .footer-author{color:#d58e77;border-bottom:1px solid rgba(213,142,119,.55)}
+    @media(max-width:1120px) and (min-width:901px){
+      .site-head{padding-inline:28px;gap:12px}
+      .site-head nav{gap:10px}
+      .site-head nav a{font-size:9px}
+      .external-nav .destination-link{padding:8px 9px;font-size:7px}
+    }
+    @media(max-width:900px){
+      .external-nav{display:none}
+      .mobile-menu{max-height:calc(100svh - 72px);overflow-y:auto;gap:10px}
+      .mobile-menu .mobile-destination{
+        padding:13px 14px;
+        border:1px solid rgba(213,142,119,.62);
+        color:#eee9dc;
+      }
+      .mobile-menu .mobile-continuum{
+        margin-top:4px;
+        background:#d77559;
+        border-color:#d77559;
+        color:#11110f;
+      }
+      .mobile-menu .mobile-destination small{
+        display:block;
+        margin-top:5px;
+        font:8px 'Space Mono',monospace;
+        letter-spacing:.12em;
+        opacity:.72;
+      }
+    }
+    @media(max-width:600px){
+      .mobile-menu{top:62px;max-height:calc(100svh - 62px)}
+      .cover-actions{display:grid}
+      .cover-actions a{width:100%;min-width:0}
+    }
+
     /* Retratos individuales de personajes */
     .cast-grid article .character-photo{
       width:100%;
@@ -111,6 +198,181 @@
     @media(max-width:600px){
       .triptych{grid-template-columns:1fr;gap:28px}
     }
+
+    /* Ediciones y compra del libro */
+    .purchase{
+      padding:clamp(95px,10vw,150px) var(--pad);
+      background:#171714;
+      color:#eee9dc;
+      border-top:1px solid rgba(255,255,255,.14);
+    }
+    .purchase-head{
+      display:grid;
+      grid-template-columns:.35fr 1fr;
+      gap:5vw;
+      align-items:start;
+      margin-bottom:clamp(55px,7vw,90px);
+    }
+    .purchase-head h2{
+      max-width:900px;
+      margin:0;
+      font:300 clamp(58px,7vw,110px)/.9 'Spectral',serif;
+      letter-spacing:-.055em;
+    }
+    .purchase-head-copy{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:3vw;
+      margin:35px 0 0;
+      max-width:860px;
+    }
+    .purchase-head-copy p{
+      margin:0;
+      font:18px/1.65 'Spectral',serif;
+      color:#aaa293;
+    }
+    .editions-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      border-top:1px solid rgba(255,255,255,.2);
+      border-bottom:1px solid rgba(255,255,255,.2);
+    }
+    .edition-card{
+      min-width:0;
+      min-height:430px;
+      padding:30px 26px 28px;
+      display:flex;
+      flex-direction:column;
+      border-right:1px solid rgba(255,255,255,.2);
+      position:relative;
+    }
+    .edition-card:last-child{border-right:0}
+    .edition-card.special{
+      background:#d9d1bd;
+      color:#11110f;
+      box-shadow:inset 0 4px 0 #b34b33;
+    }
+    .edition-visual{
+      width:100%;
+      aspect-ratio:2/3;
+      margin:22px 0 30px;
+      overflow:hidden;
+      background:#0d0e10;
+      border:1px solid rgba(255,255,255,.16);
+    }
+    .special .edition-visual{border-color:rgba(17,17,15,.18)}
+    .edition-visual img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .35s ease;
+    }
+    .edition-card:hover .edition-visual img{transform:scale(1.018)}
+    .edition-card.special .edition-visual img{filter:saturate(.88)}
+    .edition-number,.edition-meta{
+      font:8px/1.6 'Space Mono',monospace;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      color:#d58e77;
+    }
+    .special .edition-number,.special .edition-meta{color:#9b3e2a}
+    .edition-card h3{
+      margin:0 0 22px;
+      font:300 clamp(38px,3.3vw,54px)/.9 'Spectral',serif;
+      letter-spacing:-.04em;
+    }
+    .edition-card p{
+      margin:0 0 28px;
+      font:16px/1.65 'Spectral',serif;
+      color:#aaa293;
+    }
+    .special p{color:#433f37}
+    .edition-meta{display:block;margin-top:auto;margin-bottom:18px}
+    .coming-soon{
+      margin-top:auto;
+      padding:20px 0 4px;
+      border-top:1px solid rgba(213,117,89,.48);
+      color:#d77559;
+    }
+    .coming-soon span{
+      display:block;
+      margin-bottom:7px;
+      font:8px 'Space Mono',monospace;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#8f8779;
+    }
+    .coming-soon strong{
+      display:block;
+      font:700 clamp(22px,2.1vw,32px)/1 'Space Mono',monospace;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      text-shadow:0 0 20px rgba(213,117,89,.18);
+    }
+    .edition-action{
+      width:100%;
+      min-height:52px;
+      padding:15px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border:1px solid #d77559;
+      background:transparent;
+      color:inherit;
+      font:8px 'Space Mono',monospace;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      transition:background .25s ease,color .25s ease;
+    }
+    a.edition-action:hover,a.edition-action:focus-visible{
+      background:#d77559;
+      color:#11110f;
+    }
+    a.edition-action:focus-visible{outline:2px solid #eee9dc;outline-offset:4px}
+    button.edition-action{
+      border-color:#8e3827;
+      background:#b34b33;
+      color:#fff8ec;
+      cursor:not-allowed;
+      opacity:1;
+    }
+    .sold-out-stamp{
+      position:absolute;
+      top:26px;
+      right:22px;
+      padding:8px 11px;
+      border:2px solid #b34b33;
+      color:#b34b33;
+      font:700 10px 'Space Mono',monospace;
+      letter-spacing:.12em;
+      transform:rotate(3deg);
+    }
+    @media(max-width:900px){
+      .purchase-head{grid-template-columns:1fr}
+      .editions-grid{grid-template-columns:1fr 1fr}
+      .edition-card:nth-child(2){border-right:0}
+      .edition-card:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.2)}
+    }
+    @media(max-width:600px){
+      .purchase{padding:90px var(--pad)}
+      .purchase-head h2{font-size:52px}
+      .purchase-head-copy{grid-template-columns:1fr;gap:18px}
+      .editions-grid{grid-template-columns:1fr}
+      .edition-card{
+        min-height:0;
+        padding:28px 22px;
+        border-right:0;
+        border-bottom:1px solid rgba(255,255,255,.2);
+      }
+      .edition-card:nth-child(2){border-bottom:1px solid rgba(255,255,255,.2)}
+      .edition-card:last-child{border-bottom:0}
+      .edition-visual{max-width:320px;align-self:center;margin-top:24px}
+      .edition-card h3{font-size:44px}
+      .edition-meta{margin-top:26px}
+      .coming-soon{margin-top:28px;padding-top:18px}
+      .coming-soon strong{font-size:28px}
+    }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Salvar el cielo","author":{"@type":"Person","name":"Moisés Corral"},"inLanguage":"es","url":"https://moisescorral.es/salvar/libro/","description":"En CONTINUUM nadie envejece, nadie enferma y nadie muere. Hasta ahora."}</script>
   <!-- Google tag (gtag.js) -->
@@ -124,13 +386,13 @@
 </head>
 <body>
   <div class="film-grain" aria-hidden="true"></div><div class="progress"><span id="progressBar"></span></div>
-  <header class="site-head" id="siteHead"><a class="wordmark" href="#portada"><small>UNA NOVELA DE</small><b>MOISÉS CORRAL</b></a><nav aria-label="Navegación"><a href="#premisa">Premisa</a><a href="#campo">El lugar</a><a href="#personajes">Personajes</a><a href="#fragmento">Leer</a></nav><a class="continuum-mini" href="../index.html">CONTINUUM ↗</a><button id="menuButton" class="menu-button" type="button" aria-expanded="false">Índice</button></header>
-  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="#premisa">Premisa</a><a href="#campo">Campo la Carrera</a><a href="#samantha">Samantha</a><a href="#personajes">Personajes</a><a href="#viaje">El viaje</a><a href="#fragmento">Fragmento</a><a href="#ilustraciones">Ilustraciones</a><a href="../index.html">Descubrir CONTINUUM ↗</a></nav>
+  <header class="site-head" id="siteHead"><a class="wordmark" href="#portada"><small>UNA NOVELA DE</small><b>MOISÉS CORRAL</b></a><nav aria-label="Navegación"><a href="#premisa">Premisa</a><a href="#campo">El lugar</a><a href="#personajes">Personajes</a><a href="#fragmento">Leer</a><a href="#comprar">Comprar</a></nav><div class="external-nav" aria-label="Otros sitios"><a class="destination-link continuum-link" href="../index.html">CONTINUUM ↗</a><a class="destination-link author-link" href="https://moisescorral.es/" target="_blank" rel="noopener" aria-label="Visitar la web de Moisés Corral y descubrir sus otros libros (se abre en una pestaña nueva)">MOISÉS CORRAL ↗</a></div><button id="menuButton" class="menu-button" type="button" aria-expanded="false">Índice</button></header>
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="#premisa">Premisa</a><a href="#campo">Campo la Carrera</a><a href="#samantha">Samantha</a><a href="#personajes">Personajes</a><a href="#viaje">El viaje</a><a href="#fragmento">Fragmento</a><a href="#ilustraciones">Ilustraciones</a><a href="#comprar">Comprar</a><a class="mobile-destination mobile-continuum" href="../index.html">Descubrir CONTINUUM ↗<small>La versión oficial del futuro</small></a><a class="mobile-destination mobile-author" href="https://moisescorral.es/" target="_blank" rel="noopener" aria-label="Visitar la web de Moisés Corral y descubrir sus otros libros (se abre en una pestaña nueva)">Moisés Corral ↗<small>Autor y otros libros</small></a></nav>
 
   <main>
     <section class="cover" id="portada">
       <div class="cover-poster reveal"><img src="assets/portada-salvar-el-cielo.avif" alt="Samantha contempla una aurora imposible sobre Campo la Carrera"></div>
-      <div class="cover-ad reveal"><p class="label">PRÓXIMAMENTE</p><h2>Aquí no puedes esconderte.<br>Ni siquiera del tiempo.</h2><a href="#premisa">Descubrir la historia ↓</a><div class="ad-code">EXPEDIENTE / CLC-07<br>INTEGRIDAD / 91%</div></div>
+      <div class="cover-ad reveal"><p class="label">PRÓXIMAMENTE</p><h2>Aquí no puedes esconderte.<br>Ni siquiera del tiempo.</h2><div class="cover-actions"><a href="#premisa">Descubrir la historia <span>↓</span></a><a class="cover-author" href="https://moisescorral.es/" target="_blank" rel="noopener" aria-label="Conocer a Moisés Corral y descubrir sus otros libros (se abre en una pestaña nueva)">Conocer al autor <span>↗</span></a></div><div class="ad-code">EXPEDIENTE / CLC-07<br>INTEGRIDAD / 91%</div></div>
       <p class="cover-quote">“Esta noche el cielo<br>se sale del guion.”</p>
     </section>
 
@@ -150,9 +412,54 @@
 
     <section class="gallery" id="ilustraciones"><header class="reveal"><p class="eyebrow">07 / ILUSTRACIONES</p><h2>Imágenes de un mundo<br>que todavía parece perfecto.</h2></header><div class="triptych reveal"><figure><img src="assets/aurora.avif" alt="Samantha contempla una aurora boreal sobre Campo la Carrera" loading="lazy"><figcaption>01 / LA PRIMERA GRIETA</figcaption></figure><figure><img src="assets/tren.avif" alt="Samantha y Will observan un tren de vapor avanzando por el bosque sin vías" loading="lazy"><figcaption>02 / EL TREN SIN VÍAS</figcaption></figure><figure><img src="assets/investiga.avif" alt="Samantha investiga en las calles futuristas de la Capital" loading="lazy"><figcaption>03 / LA INVESTIGACIÓN</figcaption></figure></div></section>
 
+    <section class="purchase" id="comprar" aria-labelledby="purchaseTitle">
+      <header class="purchase-head reveal">
+        <p class="eyebrow">08 / EDICIONES</p>
+        <div>
+          <h2 id="purchaseTitle">Elige cómo entrar<br>en la historia.</h2>
+          <div class="purchase-head-copy">
+            <p>Cuatro ediciones de <em>Salvar el cielo</em>. La primera fue una tirada irrepetible; las demás llegarán muy pronto.</p>
+            <p>La tapa dura, la tapa blanda y el eBook se encuentran en preparación para su lanzamiento.</p>
+          </div>
+        </div>
+      </header>
+      <div class="editions-grid reveal">
+        <article class="edition-card special">
+          <span class="edition-number">01 / Tirada exclusiva</span>
+          <span class="sold-out-stamp" aria-label="Edición agotada">AGOTADA</span>
+          <figure class="edition-visual"><img src="assets/publicidad/edicion-especial.avif" alt="Edición especial de Salvar el cielo con libro firmado, lámina y guardapáginas" loading="lazy"></figure>
+          <h3>Edición<br>especial</h3>
+          <p>Una edición limitada, numerada y firmada por el autor, acompañada de un guardapáginas exclusivo y una lámina A3. Una tirada única que no volverá a repetirse.</p>
+          <span class="edition-meta">100 ejemplares · Incluía regalos</span>
+          <button class="edition-action" type="button" disabled aria-disabled="true"><span>Edición agotada</span><span aria-hidden="true">×</span></button>
+        </article>
+        <article class="edition-card">
+          <span class="edition-number">02 / Edición física</span>
+          <figure class="edition-visual"><img src="assets/publicidad/tapadura.avif" alt="Edición en tapa dura de Salvar el cielo" loading="lazy"></figure>
+          <h3>Tapa<br>dura</h3>
+          <p>La edición de coleccionista para quienes quieren conservar la historia en su formato más cuidado.</p>
+          <div class="coming-soon" aria-label="Tapa dura disponible próximamente"><span>Lanzamiento</span><strong>Próximamente</strong></div>
+        </article>
+        <article class="edition-card">
+          <span class="edition-number">03 / Edición física</span>
+          <figure class="edition-visual"><img src="assets/publicidad/tapablanda.avif" alt="Edición en tapa blanda de Salvar el cielo" loading="lazy"></figure>
+          <h3>Tapa<br>blanda</h3>
+          <p>Una edición flexible y ligera, pensada para acompañarte dentro y fuera de Campo la Carrera.</p>
+          <div class="coming-soon" aria-label="Tapa blanda disponible próximamente"><span>Lanzamiento</span><strong>Próximamente</strong></div>
+        </article>
+        <article class="edition-card">
+          <span class="edition-number">04 / Edición digital</span>
+          <figure class="edition-visual"><img src="assets/publicidad/ebook.avif" alt="Edición eBook Kindle de Salvar el cielo mostrada en un lector electrónico" loading="lazy"></figure>
+          <h3>eBook<br>Kindle</h3>
+          <p>La historia completa en formato digital para empezar a leerla al instante en Kindle.</p>
+          <div class="coming-soon" aria-label="eBook Kindle disponible próximamente"><span>Lanzamiento</span><strong>Próximamente</strong></div>
+        </article>
+      </div>
+    </section>
+
     <section class="enter"><p class="eyebrow">ANTES DE LEER LA HISTORIA</p><h2>Descubre<br>la promesa.</h2><p>Visita la web oficial de CONTINUUM. Conoce sus ciudades, sus servicios y la vida eterna que ofrece. Todo funciona exactamente como debería.</p><a href="../index.html">Entrar en CONTINUUM <span>↗</span></a><small>NO TODO LO QUE ENCONTRARÁS ALLÍ ES VERDAD</small></section>
   </main>
-  <footer><a href="#portada">SALVAR EL CIELO</a><p>UNA NOVELA DE MOISÉS CORRAL · © 2026</p><a href="mailto:contacto@moisescorral.es">CONTACTO</a></footer>
+  <footer><a href="#portada">SALVAR EL CIELO</a><p>UNA NOVELA DE MOISÉS CORRAL · © 2026</p><a class="footer-author" href="https://moisescorral.es/" target="_blank" rel="noopener">AUTOR Y OTROS LIBROS ↗</a><a href="mailto:contacto@moisescorral.es">CONTACTO</a></footer>
   <script src="js/app.js"></script>
   <script>
     (() => {

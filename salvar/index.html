@@ -27,6 +27,86 @@
 
   <link rel="preload" as="image" href="assets/promohero.avif" type="image/avif">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Accesos editoriales: visibles sin abandonar el lenguaje visual de CONTINUUM. */
+    .topbar{gap:18px}
+    .desktop-nav{align-items:center;gap:clamp(12px,1.7vw,28px)}
+    .desktop-nav .nav-book{
+      position:relative;
+      padding:10px 14px;
+      border:1px solid rgba(124,231,255,.68);
+      background:linear-gradient(135deg,rgba(124,231,255,.17),rgba(40,200,238,.05));
+      color:var(--white);
+      box-shadow:0 0 22px rgba(40,200,238,.13),inset 0 0 16px rgba(124,231,255,.04);
+      text-transform:uppercase;
+      letter-spacing:.09em;
+    }
+    .desktop-nav .nav-book::before{
+      content:"";
+      position:absolute;
+      left:8px;
+      top:6px;
+      width:3px;
+      height:3px;
+      border-radius:50%;
+      background:var(--cyan);
+      box-shadow:0 0 7px var(--cyan);
+    }
+    .desktop-nav .nav-book:hover,.desktop-nav .nav-book:focus-visible{
+      background:var(--cyan);
+      color:var(--navy);
+      box-shadow:0 0 28px rgba(124,231,255,.3);
+    }
+    .desktop-nav .nav-author{color:#d8ebf1;white-space:nowrap}
+    .desktop-nav .nav-author span{color:var(--cyan)}
+    .desktop-nav .nav-author:hover,.desktop-nav .nav-author:focus-visible{color:var(--cyan)}
+    .button-book{
+      color:var(--white);
+      border-color:rgba(124,231,255,.58);
+      background:linear-gradient(135deg,rgba(5,31,48,.88),rgba(18,82,103,.52));
+      box-shadow:0 0 25px rgba(40,200,238,.14);
+    }
+    .button-book:hover,.button-book:focus-visible{
+      color:var(--navy);
+      background:var(--white);
+      border-color:var(--white);
+      transform:translateY(-2px);
+    }
+    .nav-book:focus-visible,.nav-author:focus-visible,.button-book:focus-visible,.mobile-menu a:focus-visible{
+      outline:2px solid var(--cyan);
+      outline-offset:3px;
+    }
+    @media(max-width:1150px) and (min-width:901px){
+      .topbar{padding-inline:28px}
+      .desktop-nav{gap:10px;font-size:10px}
+      .desktop-nav .nav-book{padding:9px 10px}
+      .nav-cta{padding:10px 11px;font-size:10px}
+    }
+    @media(max-width:900px){
+      .mobile-menu{gap:14px;overflow-y:auto}
+      .mobile-menu a{font-size:clamp(18px,5vw,26px);padding:12px 14px}
+      .mobile-menu .mobile-book{
+        margin-top:4px;
+        border:1px solid rgba(124,231,255,.72);
+        background:linear-gradient(135deg,rgba(124,231,255,.17),rgba(40,200,238,.04));
+        color:var(--white);
+        box-shadow:0 0 28px rgba(40,200,238,.14);
+      }
+      .mobile-menu .mobile-book small,.mobile-menu .mobile-author small{
+        display:block;
+        margin-top:5px;
+        color:var(--cyan);
+        font:9px 'Space Mono',monospace;
+        letter-spacing:.12em;
+        text-transform:uppercase;
+      }
+      .mobile-menu .mobile-author{color:#d8ebf1;border-color:rgba(124,231,255,.28)}
+    }
+    @media(max-width:600px){
+      .mobile-menu{padding-top:76px}
+      .hero-actions .button{width:100%;text-align:center}
+    }
+  </style>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -65,7 +145,8 @@
       <a href="#destinos">Destinos</a>
       <a href="#directorio">Directorio</a>
       <a href="#movilidad">Movilidad</a>
-      <a href="libro/">El libro</a>
+      <a class="nav-book" href="libro/index.html" aria-label="Descubrir el libro Salvar el cielo">El libro&nbsp; ↗</a>
+      <a class="nav-author" href="https://moisescorral.es/" target="_blank" rel="noopener" aria-label="Conocer a Moisés Corral y sus otros libros (se abre en una pestaña nueva)">Moisés Corral <span>↗</span></a>
     </nav>
     <a class="nav-cta" href="#reserva">Solicitar acceso <span>↗</span></a>
     <button class="menu-button" id="menuButton" aria-label="Abrir menú" aria-expanded="false">Menú</button>
@@ -78,7 +159,8 @@
     <a href="#seguridad">03 — Seguridad</a>
     <a href="#directorio">04 — Directorio</a>
     <a href="#reserva">05 — Reserva</a>
-    <a href="libro/">06 — El libro</a>
+    <a class="mobile-book" href="libro/index.html">06 — El libro <small>Descubrir Salvar el cielo ↗</small></a>
+    <a class="mobile-author" href="https://moisescorral.es/" target="_blank" rel="noopener" aria-label="Conocer a Moisés Corral y sus otros libros (se abre en una pestaña nueva)">07 — Moisés Corral <small>Autor y otros libros ↗</small></a>
   </aside>
 
   <main id="continuum">
@@ -93,6 +175,7 @@
         <p class="hero-lede">Un ecosistema de ciudades, pueblos y lugares únicos donde tecnología, cultura y naturaleza convergen para ofrecer una forma de vivir más humana.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#proyecto">Descubrir CONTINUUM <span>↓</span></a>
+          <a class="button button-book" href="libro/index.html" aria-label="Entrar en la web del libro Salvar el cielo">Explorar el libro <span>↗</span></a>
           <button class="button button-ghost" id="soundButton" type="button"><span class="sound-bars" aria-hidden="true">▮▮▮</span> Ambiente <b>OFF</b></button>
         </div>
       </div>
@@ -272,7 +355,7 @@
         <details><summary>¿Quién puede solicitar residencia?<span>+</span></summary><p>Cualquier persona mayor de edad puede solicitar el acceso al sistema, siempre que su situación médica lo permita. Encontrará información detallada en cualquiera de las delegaciones regionales de CONTINUUM distribuidas por todo el mundo. También podrá incluir a sus seres queridos en la solicitud, para que nunca tenga que separarse de ellos.</p></details>
         <details><summary>¿Puedo elegir mi ciudad?<span>+</span></summary><p>Una vez dentro del sistema y completado el proceso de Transición, podrá desplazarse libremente por todo el territorio de CONTINUUM, salvo por las áreas técnicas y las comunidades de acceso restringido.</p></details>
         <details><summary>¿Cómo se abona la entrada?<span>+</span></summary><p>La cuota de acceso deberá abonarse por anticipado para cada uno de los miembros incluidos en el contrato. Si alguna de las personas no pudiera completar la Transición, el importe correspondiente será reembolsado a sus herederos legales o a los beneficiarios designados previamente.</p></details>
-        <details class="faq-corrupt"><summary>¿Qué son las zonas restringidas?<span>+</span></summary><p class="glitch-copy" data-clean="No existe ningún enclave registrado con ese nombre." data-corrupt="EXISTE. THOMAS SABE DÓNDE. SIGUE BAJANDO.">No existe ningún enclave registrado con ese nombre.</p></details>
+        <details class="faq-corrupt"><summary>¿Qué son las zonas restringidas?<span>+</span></summary><p class="glitch-copy" data-clean="No se pregunta por algo que no existe. No insistas." data-corrupt="NO SE PREGUNTA POR ALGO QUE NO EXISTE. NO INSISTAS.">No se pregunta por algo que no existe. No insistas.</p></details>
       </div>
     </section>
 

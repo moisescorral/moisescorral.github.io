@@ -15,8 +15,31 @@
   function setMenu(open){menu.classList.toggle('open',open);menu.setAttribute('aria-hidden',String(!open));menuButton.setAttribute('aria-expanded',String(open));body.style.overflow=open?'hidden':''}
   menuButton.addEventListener('click',()=>setMenu(true)); menuClose.addEventListener('click',()=>setMenu(false)); $$('a',menu).forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 
-  const sound=$('#soundButton'); sound.addEventListener('click',()=>{const on=sound.classList.toggle('on');$('b',sound).textContent=on?'ON':'OFF';toast(on?'Ambiente de CONTINUUM activado':'Ambiente silenciado')});
-  const toastEl=$('#toast'); let toastTimer; function toast(text){toastEl.textContent=text;toastEl.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toastEl.classList.remove('show'),2600)}
+const sound=$('#soundButton');
+
+const ambientAudio = new Audio('assets/ambiente.mp3');
+ambientAudio.loop = true;
+ambientAudio.volume = 0.22;
+ambientAudio.preload = 'auto';
+
+sound.addEventListener('click', async ()=>{
+  const on = sound.classList.toggle('on');
+  $('b',sound).textContent = on ? 'ON' : 'OFF';
+
+  if(on){
+    try{
+      await ambientAudio.play();
+      toast('Ambiente de CONTINUUM activado');
+    }catch(error){
+      sound.classList.remove('on');
+      $('b',sound).textContent = 'OFF';
+      toast('No se ha podido activar el ambiente');
+    }
+  }else{
+    ambientAudio.pause();
+    toast('Ambiente silenciado');
+  }
+});  const toastEl=$('#toast'); let toastTimer; function toast(text){toastEl.textContent=text;toastEl.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toastEl.classList.remove('show'),2600)}
 
   $('#thomasButton').addEventListener('click',()=>{
     $('#thomasCard').classList.add('corrupt'); const answer=$('#thomasAnswer'); answer.textContent='RESPUESTA AUTOMÁTICA: No preguntes por Campo la Carrera. — T.';

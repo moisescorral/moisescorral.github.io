@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#04101e">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-continuum.svg?v=1">
+  <title>Salvar el cielo | CONTINUUM — Moisés Corral</title>
+  <meta name="description" content="Official website of Salvar el cielo, the novel by Moisés Corral. Discover CONTINUUM, its cities, and the hidden reality of Campo la Carrera.">
+  <meta name="author" content="Moisés Corral">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://moisescorral.es/en/salvar/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Moisés Corral">
+  <meta property="og:title" content="Salvar el cielo | CONTINUUM">
+  <meta property="og:description" content="Discover CONTINUUM and the hidden reality of Campo la Carrera on the official website of Salvar el cielo.">
+  <meta property="og:url" content="https://moisescorral.es/en/salvar/">
+  <meta property="og:image" content="https://moisescorral.es/salvar/assets/campo-la-carrera-hero.png">
+  <meta property="og:image:alt" content="Salvar el cielo — CONTINUUM and Campo la Carrera">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Salvar el cielo | CONTINUUM">
+  <meta name="twitter:description" content="Discover CONTINUUM and the hidden reality of Campo la Carrera.">
+  <meta name="twitter:image" content="https://moisescorral.es/salvar/assets/campo-la-carrera-hero.png">
+
+  <link rel="preload" as="image" href="assets/promohero.avif" type="image/avif">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Editorial access points: visible without breaking CONTINUUM's visual language. */
+    .topbar{gap:18px}
+    .desktop-nav{align-items:center;gap:clamp(12px,1.7vw,28px)}
+    .desktop-nav .nav-book{
+      position:relative;
+      padding:10px 14px;
+      border:1px solid rgba(124,231,255,.68);
+      background:linear-gradient(135deg,rgba(124,231,255,.17),rgba(40,200,238,.05));
+      color:var(--white);
+      box-shadow:0 0 22px rgba(40,200,238,.13),inset 0 0 16px rgba(124,231,255,.04);
+      text-transform:uppercase;
+      letter-spacing:.09em;
+    }
+    .desktop-nav .nav-book::before{
+      content:"";
+      position:absolute;
+      left:8px;
+      top:6px;
+      width:3px;
+      height:3px;
+      border-radius:50%;
+      background:var(--cyan);
+      box-shadow:0 0 7px var(--cyan);
+    }
+    .desktop-nav .nav-book:hover,.desktop-nav .nav-book:focus-visible{
+      background:var(--cyan);
+      color:var(--navy);
+      box-shadow:0 0 28px rgba(124,231,255,.3);
+    }
+    .desktop-nav .nav-author{color:#d8ebf1;white-space:nowrap}
+    .desktop-nav .nav-author span{color:var(--cyan)}
+    .desktop-nav .nav-author:hover,.desktop-nav .nav-author:focus-visible{color:var(--cyan)}
+    .button-book{
+      color:var(--white);
+      border-color:rgba(124,231,255,.58);
+      background:linear-gradient(135deg,rgba(5,31,48,.88),rgba(18,82,103,.52));
+      box-shadow:0 0 25px rgba(40,200,238,.14);
+    }
+    .button-book:hover,.button-book:focus-visible{
+      color:var(--navy);
+      background:var(--white);
+      border-color:var(--white);
+      transform:translateY(-2px);
+    }
+    .nav-book:focus-visible,.nav-author:focus-visible,.button-book:focus-visible,.mobile-menu a:focus-visible{
+      outline:2px solid var(--cyan);
+      outline-offset:3px;
+    }
+    @media(max-width:1150px) and (min-width:901px){
+      .topbar{padding-inline:28px}
+      .desktop-nav{gap:10px;font-size:10px}
+      .desktop-nav .nav-book{padding:9px 10px}
+      .nav-cta{padding:10px 11px;font-size:10px}
+    }
+    @media(max-width:900px){
+      .mobile-menu{gap:14px;overflow-y:auto}
+      .mobile-menu a{font-size:clamp(18px,5vw,26px);padding:12px 14px}
+      .mobile-menu .mobile-book{
+        margin-top:4px;
+        border:1px solid rgba(124,231,255,.72);
+        background:linear-gradient(135deg,rgba(124,231,255,.17),rgba(40,200,238,.04));
+        color:var(--white);
+        box-shadow:0 0 28px rgba(40,200,238,.14);
+      }
+      .mobile-menu .mobile-book small,.mobile-menu .mobile-author small{
+        display:block;
+        margin-top:5px;
+        color:var(--cyan);
+        font:9px 'Space Mono',monospace;
+        letter-spacing:.12em;
+        text-transform:uppercase;
+      }
+      .mobile-menu .mobile-author{color:#d8ebf1;border-color:rgba(124,231,255,.28)}
+    }
+    @media(max-width:600px){
+      .mobile-menu{padding-top:76px}
+      .hero-actions .button{width:100%;text-align:center}
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "Salvar el cielo",
+      "author": {
+        "@type": "Person",
+        "name": "Moisés Corral"
+      },
+      "inLanguage": "en",
+      "url": "https://moisescorral.es/en/salvar/",
+      "image": "https://moisescorral.es/salvar/assets/campo-la-carrera-hero.png",
+      "description": "A novel by Moisés Corral about CONTINUUM and the hidden reality of Campo la Carrera."
+    }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MSEDP8ESV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-5MSEDP8ESV');
+  </script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#inicio" aria-label="CONTINUUM, back to home">
+      <img src="assets/logo-continuum.svg" class="brand-logo" width="46" height="30" alt="" aria-hidden="true" decoding="async">
+      <span>CONTINUUM</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#proyecto">Project</a>
+      <a href="#destinos">Destinations</a>
+      <a href="#directorio">Directorate</a>
+      <a href="#movilidad">Mobility</a>
+      <a class="nav-book" href="libro/index.html" aria-label="Discover the book Salvar el cielo">The book&nbsp; ↗</a>
+      <a class="nav-author" href="https://moisescorral.es/en/" target="_blank" rel="noopener" aria-label="Meet Moisés Corral and his other books (opens in a new tab)">Moisés Corral <span>↗</span></a>
+    </nav>
+    <a class="nav-cta" href="#reserva">Request access <span>↗</span></a>
+    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">Menu</button>
+  </header>
+
+  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="menu-close" id="menuClose" aria-label="Close menu">×</button>
+    <a href="#proyecto">01 — Project</a>
+    <a href="#destinos">02 — Destinations</a>
+    <a href="#seguridad">03 — Security</a>
+    <a href="#directorio">04 — Directorate</a>
+    <a href="#reserva">05 — Reservation</a>
+    <a class="mobile-book" href="libro/index.html">06 — The book <small>Discover Salvar el cielo ↗</small></a>
+    <a class="mobile-author" href="https://moisescorral.es/en/" target="_blank" rel="noopener" aria-label="Meet Moisés Corral and his other books (opens in a new tab)">07 — Moisés Corral <small>Author and other books ↗</small></a>
+  </aside>
+
+  <main id="continuum">
+    <section class="hero" id="inicio">
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> A LIFE WITHOUT AN END · YOUR FUTURE STARTS HERE</p>
+        <h1>Living<br><em>was only the beginning.</em></h1>
+        <p class="hero-lede">An ecosystem of cities, towns and unique places where technology, culture and nature converge to offer a more human way of living.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#proyecto">Discover CONTINUUM <span>↓</span></a>
+          <a class="button button-book" href="libro/index.html" aria-label="Enter the website for the book Salvar el cielo">Explore the book <span>↗</span></a>
+          <button class="button button-ghost" id="soundButton" type="button"><span class="sound-bars" aria-hidden="true">▮▮▮</span> Ambience <b>OFF</b></button>
+        </div>
+      </div>
+      <div class="hero-data" aria-label="System data">
+        <div><small>CONNECTED CITIES</small><strong>100%</strong></div>
+        <div><small>WELLBEING INDEX</small><strong>99.7<sup>%</sup></strong></div>
+        <div><small>SYSTEM</small><strong class="status"><i></i> OPTIMAL</strong></div>
+      </div>
+    </section>
+
+    <section class="manifesto section-pad" id="proyecto">
+      <div class="section-index">01 / THE PROJECT</div>
+      <div class="manifesto-grid">
+        <h2 class="reveal">We don't build<br>the future.<br><em>We live in it.</em></h2>
+        <div class="manifesto-copy reveal">
+          <p>CONTINUUM is humanity's greatest achievement: the culmination of progress, where calm, connectivity, belonging, efficiency and beauty converge into a new way of existing.</p>
+          <p>Each person is assigned a place and a culture. All of them share the same promise: that everyday life feels extraordinary again, and that time is entirely your own.</p>
+          <div class="metric-row">
+            <span><b>0%</b> net emissions</span>
+            <span><b>24/7</b> civic assistance</span>
+            <span><b>18 min</b> Transition time</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ceo-section section-pad" id="vision">
+      <div class="ceo-portrait reveal">
+        <img src="assets/adam.avif" class="ceo-photo" alt="Institutional portrait of Adam Lazar" decoding="async">
+        <div class="scanline" aria-hidden="true"></div>
+        <p>EXECUTIVE FILE / AL-001</p>
+      </div>
+      <article class="ceo-message reveal">
+        <p class="eyebrow"><span></span> Message from the President</p>
+        <blockquote>"For millennia, humanity wondered what came next. We decided to build it."</blockquote>
+        <p>CONTINUUM was born from a simple question: what if we could avoid the inevitable? Today, at last, we have the answer humankind has searched for since the beginning of time.</p>
+        <div class="signature">Adam Lazar</div>
+        <small>PRESIDENT OF CONTINUUM</small>
+      </article>
+    </section>
+
+    <section class="gallery-strip" aria-label="Moments of life in CONTINUUM">
+      <div class="gallery-card">
+        <img src="assets/arquitectura.avif" alt="Biotic architecture integrated into nature" loading="lazy" decoding="async">
+        <span>Unique architecture</span>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/comunidad.avif" alt="Shared life in CONTINUUM" loading="lazy" decoding="async">
+        <span>Shared life</span>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/transporte.avif" alt="Silent technology integrated into the landscape" loading="lazy" decoding="async">
+        <span>Efficient technology</span>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/paisaje.avif" alt="Protected natural landscape of CONTINUUM" loading="lazy" decoding="async">
+        <span>Spectacular landscape</span>
+      </div>
+    </section>
+
+    <section class="partners section-pad">
+      <p class="eyebrow center"><span></span> A partnership for what's possible <span></span></p>
+      <div class="partner-grid" aria-label="Partner organizations">
+        <div>
+          <img src="assets/logo-solythera.png" alt="Solythera" loading="lazy" decoding="async">
+          <small>ENERGY</small>
+        </div>
+        <div>
+          <img src="assets/logo-iterion.png" alt="Iterion" loading="lazy" decoding="async">
+          <small>MOBILITY</small>
+        </div>
+        <div>
+          <img src="assets/logo-orvellum.png" alt="Orvellum" loading="lazy" decoding="async">
+          <small>ARCHITECTURE</small>
+        </div>
+        <div>
+          <img src="assets/logo-takahara.png" alt="Takahara Corporation" loading="lazy" decoding="async">
+          <small>BIOSYSTEMS</small>
+        </div>
+        <div>
+          <img src="assets/logo-synaptara.png" alt="Synaptara" loading="lazy" decoding="async">
+          <small>CONNECTIVITY</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="destinations section-pad" id="destinos">
+      <div class="section-head reveal">
+        <div><p class="section-index">02 / LANDMARK PLACES</p><h2>Four ways<br>to come home.</h2></div>
+        <p>CONTINUUM is full of special places with unique characteristics. Here are 4 examples.</p>
+      </div>
+      <div class="city-grid">
+        <article class="city city-capital reveal" tabindex="0">
+          <img class="city-image" src="assets/capital.avif" alt="Capital, a hyper-technological city in the Eastern Pacific" loading="lazy" decoding="async">
+          <div class="city-content"><span>01 / EASTERN PACIFIC</span><h3>Capital</h3><p>The hyper-technological heart of CONTINUUM. A vertical, luminous, hyper-connected metropolis ruled by the imposing Needle.</p><b>Explore the city →</b></div>
+        </article>
+        <article class="city city-helvetia reveal" tabindex="0">
+          <img class="city-image" src="assets/helvetia.avif" alt="Helvetia, an alpine town beside a mountain lake" loading="lazy" decoding="async">
+          <div class="city-content"><span>02 / ALPINE CORRIDOR</span><h3>Helvetia</h3><p>Clear lakes, serene architecture and mobility that disappears beneath the landscape.</p><b>Explore the city →</b></div>
+        </article>
+        <article class="city city-salama reveal" tabindex="0">
+          <img class="city-image" src="assets/salama.avif" alt="Salama, a monumental Islamic megacity" loading="lazy" decoding="async">
+          <div class="city-content"><span>03 / SOUTHERN MERIDIAN</span><h3>Salama</h3><p>Shaded courtyards, water gardens and an Islamic city that turns innovation into hospitality.</p><b>Explore the city →</b></div>
+        </article>
+        <article class="city city-shinkei reveal" tabindex="0">
+          <img class="city-image" src="assets/shinkei.avif" alt="Shinkei, a town of Shinto and Buddhist tradition integrated into nature" loading="lazy" decoding="async">
+          <div class="city-content"><span>04 / EASTERN ARCHIPELAGO</span><h3>Shinkei</h3><p>Shinto shrines and Buddhist temples sit among cedars, waterfalls and paths where technology preserves the silence.</p><b>Explore the city →</b></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="security section-pad" id="seguridad">
+      <div class="watchdogs-card reveal">
+        <img class="watchdogs-photo" src="assets/dogs.avif" alt="WatchDogs unit agents assisting a CONTINUUM resident" loading="lazy" decoding="async">
+        <span class="watchdogs-label">WATCHDOGS / PROXIMITY UNIT</span>
+      </div>
+      <div class="security-copy reveal">
+        <p class="section-index">03 / PROXIMITY SECURITY</p>
+        <h2>Caring also<br>means <em>being close.</em></h2>
+        <p>The WatchDogs don't patrol from a distance: they're part of everyday life. Trained to anticipate risks, guide and assist, they combine a human presence with discreet technology so every neighborhood feels protected without feeling watched.</p>
+        <ul class="feature-list">
+          <li><span>01</span><div><b>Human response</b><small>A proximity team in under four minutes.</small></div></li>
+          <li><span>02</span><div><b>Non-invasive prevention</b><small>Discreet, transparent and auditable systems.</small></div></li>
+          <li><span>03</span><div><b>Trusted presence</b><small>Recognizable, trained agents close to every community.</small></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="directorate section-pad" id="directorio">
+      <div class="directorate-head reveal">
+        <p class="section-index">04 / HOW IT WORKS</p>
+        <h2>A complex system.<br>A familiar voice.</h2>
+      </div>
+      <div class="thomas-grid">
+        <div class="thomas-card reveal" id="thomasCard">
+          <div class="thomas-photo">
+            <img src="assets/thomas.avif" alt="Institutional portrait of Thomas, Directorate liaison" loading="lazy" decoding="async">
+            <div class="id-scan">VERIFIED</div>
+          </div>
+          <div class="thomas-meta"><span>TH-4471</span><strong>THOMAS</strong><small>DIRECTORATE LIAISON</small></div>
+        </div>
+        <article class="thomas-message reveal">
+          <p class="eyebrow"><span></span> Meet Thomas</p>
+          <h3>"My job is to make sure you never have to think about how any of this works."</h3>
+          <p>Thomas is your link to the Directorate: the body that coordinates transport, energy, housing and services in every community. He translates complex decisions into simple answers.</p>
+          <div class="directorate-functions">
+            <span><b>01</b> Coordinate</span><span><b>02</b> Listen</span><span><b>03</b> Resolve</span>
+          </div>
+          <button class="text-button" id="thomasButton" type="button">Send a question to Thomas →</button>
+          <p class="thomas-answer" id="thomasAnswer" aria-live="polite"></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mobility section-pad" id="movilidad">
+      <figure class="mobility-visual reveal">
+        <img src="assets/movilidad.avif" alt="CONTINUUM mobility network with air transport, levitation train, autonomous shuttles, climate-controlled bike lane and pedestrian corridor" loading="lazy" decoding="async">
+        <figcaption class="mobility-legend">
+          <span><b>01</b> Levitation</span>
+          <span><b>02</b> Shuttles</span>
+          <span><b>03</b> Bike lanes</span>
+          <span><b>04</b> Pedestrians</span>
+        </figcaption>
+      </figure>
+      <div class="mobility-copy reveal">
+        <p class="section-index">05 / MOBILITY</p>
+        <h2>Far away is<br>a thing of the past.</h2>
+        <p>Levitation trains, autonomous shuttles, climate-controlled bike lanes and pedestrian corridors form a single, accessible network.</p>
+        <div class="mobility-stats"><span><b>420</b> km/h intercity</span><span><b>100%</b> clean energy</span></div>
+      </div>
+    </section>
+
+    <section class="faq section-pad" id="preguntas">
+      <div class="faq-intro reveal"><p class="section-index">06 / FREQUENTLY ASKED QUESTIONS</p><h2>Before<br>taking the step.</h2><p>Everything you need to know to start your access application.</p></div>
+      <div class="accordion" id="accordion">
+        <details><summary>What exactly is CONTINUUM?<span>+</span></summary><p>CONTINUUM is the next step in human evolution: a revolutionary discovery that frees us from the limits of the physical body and opens a new era for our species.</p></details>
+        <details><summary>Who can apply for residency?<span>+</span></summary><p>Any adult may apply for access to the system, provided their medical condition allows it. You'll find detailed information at any of the CONTINUUM regional offices located around the world. You may also include your loved ones in your application, so you never have to be separated from them.</p></details>
+        <details><summary>Can I choose my city?<span>+</span></summary><p>Once inside the system and after completing the Transition process, you may move freely throughout CONTINUUM territory, except for technical areas and restricted-access communities.</p></details>
+        <details><summary>How is the entry fee paid?<span>+</span></summary><p>The access fee must be paid in advance for each member included in the contract. If any person is unable to complete the Transition, the corresponding amount will be refunded to their legal heirs or previously designated beneficiaries.</p></details>
+        <details class="faq-corrupt"><summary>What are the restricted zones?<span>+</span></summary><p class="glitch-copy" data-clean="You don't ask about something that doesn't exist. Don't push it." data-corrupt="YOU DON'T ASK ABOUT SOMETHING THAT DOESN'T EXIST. DON'T PUSH IT.">You don't ask about something that doesn't exist. Don't push it.</p></details>
+      </div>
+    </section>
+
+    <section class="reservation section-pad" id="reserva">
+      <div class="reservation-copy reveal">
+        <p class="eyebrow"><span></span> 2102 admission cycle</p>
+        <h2>Your place in the<br>future starts here.</h2>
+        <p>Leave us your details and a representative from your nearest office will get in touch with you. There are <strong id="spots">127</strong> spots left in this cycle.</p>
+      </div>
+      <form class="reservation-form reveal" id="reservationForm" action="https://formspree.io/f/mykvenll" method="POST">
+        <input type="hidden" name="origen" value="CONTINUUM — Salvar el cielo">
+        <input class="form-honey" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label>Full name<input required name="name" autocomplete="name" placeholder="Your name"></label>
+        <label>Email<input required name="email" autocomplete="email" type="email" placeholder="you@email.com"></label>
+        <div class="consent-group">
+          <label class="consent"><input required name="consentimiento_datos" value="Sí" type="checkbox"><span>I authorize the processing of my data to handle this access request.</span></label>
+          <label class="consent optional"><input id="bookConsent" name="consentimiento_novedades" value="Sí" type="checkbox"><span>I want to receive email updates about <em>Salvar el cielo</em> and its release. I can withdraw my consent at any time.</span></label>
+        </div>
+        <details class="form-privacy">
+          <summary>Data protection information</summary>
+          <p><strong>Data controller:</strong> Moisés Corral. <strong>Purpose:</strong> to handle your request and, only if you check the optional box, to send you updates about <em>Salvar el cielo</em>. <strong>Legal basis:</strong> your consent. The form is processed through Formspree. You can withdraw your consent and exercise your rights of access, rectification or deletion by writing to <a href="mailto:contacto@moisescorral.es">contacto@moisescorral.es</a>.</p>
+        </details>
+        <button class="button button-primary submit-button" type="submit">Request access <span>→</span></button>
+        <p class="form-status" id="formStatus" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="breach" id="breach" aria-label="System failure">
+      <div class="breach-lines" aria-hidden="true"></div>
+      <div class="breach-content">
+        <p class="system-message" id="systemMessage">CHECKING SYSTEM INTEGRITY…</p>
+        <div class="integrity"><span id="integrityBar"></span></div>
+        <strong id="integrityValue">100%</strong>
+        <h2 class="breach-title" data-text="EVERYTHING IS FINE.">EVERYTHING IS FINE.</h2>
+        <p class="breach-hidden" id="breachHidden">The official version ends here.</p>
+        <button class="breach-button" id="breachButton" type="button" disabled>RECOVER HIDDEN FILE</button>
+      </div>
+    </section>
+  </main>
+
+  <section class="campo" id="campo" aria-hidden="true">
+    <header class="archive-header">
+      <a href="#campo" class="archive-brand">CLC ARCHIVE / 07</a>
+      <span>RECOVERED · INCOMPLETE · DO NOT DISTRIBUTE</span>
+      <button id="returnButton" type="button">Back to CONTINUUM</button>
+    </header>
+    <section class="campo-hero">
+      <div class="campo-image"></div>
+      <div class="campo-copy reveal-field">
+        <p>FILE: SALVAR EL CIELO</p>
+        <h2>Campo<br>la Carrera</h2>
+        <p class="campo-lede">The future they promised never arrives here. This is where the story they tried to erase begins.</p>
+        <a href="#historia">Open file ↓</a>
+      </div>
+      <div class="archive-stamp">ARCHIVE<br>RECOVERED</div>
+    </section>
+    <section class="field-section history" id="historia">
+      <aside><span>01</span><p>THE STORY</p></aside>
+      <article>
+        <p class="field-kicker">What was left off the map</p>
+        <h3>The sky belonged to everyone.<br>Until someone decided to <em>manage it.</em></h3>
+        <div class="story-columns">
+          <p>Campo la Carrera is a small, dry, stubborn place. While the world watches CONTINUUM's perfect cities in fascination, here a group of people keeps documents, memories and questions the Directorate would rather keep buried.</p>
+          <p>The arrival of an impossible message breaks the village's routine. Its source points to Thomas, the friendly official who smiles from the corporate website. But the voice in the message doesn't match the official version.</p>
+        </div>
+        <div class="redacted-note">THE PROJECT DOESN'T SAVE THE SKY. <s>IT REPLACES IT.</s></div>
+      </article>
+    </section>
+    <section class="field-section characters" id="personajes">
+      <aside><span>02</span><p>CHARACTERS</p></aside>
+      <div class="character-area">
+        <div class="field-title"><p>Persons of interest</p><h3>Four voices.<br>One incomplete truth.</h3></div>
+        <div class="character-grid">
+          <article><span class="character-code">CLC-01</span><div class="char-portrait ana"></div><h4>Ana</h4><p>An accidental archivist. She has the rare ability to remember what the systems correct.</p><small>STATUS: LOCATED</small></article>
+          <article><span class="character-code">CLC-02</span><div class="char-portrait teo"></div><h4>Teo</h4><p>He knows every path through the village, and none of them appear on the Directorate's maps.</p><small>STATUS: UNREGISTERED</small></article>
+          <article><span class="character-code">DIR-4471</span><div class="char-portrait thomas"></div><h4>Thomas</h4><p>A CONTINUUM official. His smile is the same; his story changes depending on the file.</p><small>STATUS: DUPLICATED</small></article>
+          <article><span class="character-code">CLC-00</span><div class="char-portrait cielo"></div><h4>The sky</h4><p>A territory, a memory, or a promise. Everyone talks about saving it. No one explains from whom.</p><small>STATUS: DISPUTED</small></article>
+        </div>
+      </div>
+    </section>
+    <footer class="field-footer">
+      <p>SALVAR EL CIELO</p><span>End of recovered fragment / The story continues</span><a href="#campo">↑ Back to top</a>
+    </footer>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -10 1740 1140" role="img" aria-labelledby="title">
+  <title id="title">Símbolo de CONTINUUM</title>
+  <g fill="none" stroke="#59f2eb" stroke-linecap="butt">
+    <path d="M 1383 461 A 545 545 0 1 0 1383 651" stroke-width="19"/>
+    <path d="M 1194 463 A 360 360 0 1 0 1194 649" stroke-width="19"/>
+    <path d="M 0 556 H 1700" stroke-width="11" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(846 556)">
+    <circle r="113" fill="#071126"/>
+    <circle r="89" fill="#061b50"/>
+    <circle r="72" fill="#062c85"/>
+    <circle r="57" fill="#0b4bc2"/>
+    <circle r="43" fill="#1595e6"/>
+    <circle r="32" fill="#64eaf0"/>
+    <circle r="24" fill="#eefbf2"/>
+  </g>
+</svg>

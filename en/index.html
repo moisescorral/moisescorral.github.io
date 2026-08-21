@@ -28,6 +28,31 @@
       background:linear-gradient(135deg,rgba(201,164,92,.14),rgba(201,164,92,.04));
       color:var(--gold);
     }
+    .header-actions{
+      display:flex;
+      align-items:center;
+      gap:20px;
+    }
+    .language-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:38px;
+      padding:8px 10px;
+      border:1px solid rgba(201,164,92,.55);
+      color:var(--gold);
+      font-size:11px;
+      line-height:1;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      transition:.25s ease;
+    }
+    .language-link:hover,
+    .language-link:focus-visible{
+      border-color:var(--gold);
+      background:rgba(201,164,92,.12);
+      color:var(--gold);
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -64,15 +89,18 @@
 <body>
 <header class="header">
   <a href="#inicio" class="logo" aria-label="Home">MC</a>
-  <nav aria-label="Main navigation">
-    <a href="#inicio">Home</a>
-    <a href="#libros">Books</a>
-    <a href="#universos">Universes</a>
-    <a href="#proximamente">Coming soon</a>
-    <a href="#bio">About me</a>
-    <a href="#lecturas">Reading list</a>
-    <a href="#contacto">Contact</a>
-  </nav>
+  <div class="header-actions">
+    <nav aria-label="Main navigation">
+      <a href="#inicio">Home</a>
+      <a href="#libros">Books</a>
+      <a href="#universos">Universes</a>
+      <a href="#proximamente">Coming soon</a>
+      <a href="#bio">About me</a>
+      <a href="#lecturas">Reading list</a>
+      <a href="#contacto">Contact</a>
+    </nav>
+    <a class="language-link" href="/" lang="es" hreflang="es" aria-label="Ver esta página en español">ES</a>
+  </div>
 </header>
 <main id="inicio" class="hero hero-rusia">
   <section class="hero-text">

@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://moisescorral.es/">
+  <link rel="alternate" hreflang="es" href="https://moisescorral.es/">
+  <link rel="alternate" hreflang="en" href="https://moisescorral.es/en/">
+  <link rel="alternate" hreflang="x-default" href="https://moisescorral.es/">
   <title>Moisés Corral | Autor de Salvar el cielo</title>
   <meta name="description" content="Web oficial de Moisés Corral, autor de Salvar el cielo, Rusia 03:14 y otros libros de ficción, ensayo, historia y geopolítica.">
   <meta name="author" content="Moisés Corral">
@@ -27,6 +30,46 @@
     .book-link.book-coming:hover{
       background:linear-gradient(135deg,rgba(201,164,92,.14),rgba(201,164,92,.04));
       color:var(--gold);
+    }
+    .header > nav{
+      margin-left:auto;
+    }
+    .language-switcher{
+      display:flex;
+      align-items:center;
+      gap:7px;
+      margin-left:22px;
+      color:var(--text);
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:2px;
+      line-height:1;
+      white-space:nowrap;
+    }
+    .language-switcher a{
+      color:var(--text);
+      transition:color .25s ease;
+    }
+    .language-switcher a:hover,
+    .language-switcher a:focus-visible{
+      color:var(--gold);
+    }
+    .language-switcher a:focus-visible{
+      outline:1px solid var(--gold);
+      outline-offset:4px;
+    }
+    .language-current{
+      color:var(--gold);
+    }
+    .language-separator{
+      color:rgba(255,255,255,.35);
+    }
+    @media(max-width:850px){
+      .language-switcher{
+        margin-left:auto;
+        font-size:10px;
+        letter-spacing:1.5px;
+      }
     }
   </style>
   <script type="application/ld+json">
@@ -73,6 +116,11 @@
     <a href="#lecturas">Lecturas</a>
     <a href="#contacto">Contacto</a>
   </nav>
+  <div class="language-switcher" aria-label="Seleccionar idioma">
+    <span class="language-current" lang="es" aria-current="page">ES</span>
+    <span class="language-separator" aria-hidden="true">|</span>
+    <a href="/en/" lang="en" hreflang="en" aria-label="View this website in English">EN</a>
+  </div>
 </header>
 <main id="inicio" class="hero hero-rusia">
   <section class="hero-text">

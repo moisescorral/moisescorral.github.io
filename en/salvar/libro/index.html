@@ -106,6 +106,133 @@
       .cover-actions a{width:100%;min-width:0}
     }
 
+    /* Official trailer: a cinematic pause within the archive */
+    .trailer{
+      position:relative;
+      isolation:isolate;
+      overflow:hidden;
+      padding:clamp(90px,11vw,170px) var(--pad);
+      background:
+        radial-gradient(circle at 80% 22%,rgba(213,117,89,.1),transparent 32%),
+        linear-gradient(180deg,#11110f 0%,#171714 55%,#11110f 100%);
+      color:#eee9dc;
+      border-top:1px solid rgba(238,233,220,.12);
+      border-bottom:1px solid rgba(238,233,220,.12);
+    }
+    .trailer::before{
+      content:"TRAILER / FILE 06";
+      position:absolute;
+      top:clamp(30px,4vw,58px);
+      right:var(--pad);
+      color:rgba(213,142,119,.38);
+      font:8px 'Space Mono',monospace;
+      letter-spacing:.18em;
+    }
+    .trailer-grid{
+      display:grid;
+      grid-template-columns:minmax(210px,.38fr) minmax(0,1fr);
+      gap:clamp(38px,7vw,110px);
+      align-items:end;
+      max-width:1500px;
+      margin:0 auto;
+    }
+    .trailer-copy{padding-bottom:clamp(4px,1.2vw,18px)}
+    .trailer-copy .eyebrow{color:#d58e77}
+    .trailer-copy h2{
+      margin:18px 0 24px;
+      font:300 clamp(50px,6.5vw,104px)/.86 'Spectral',serif;
+      letter-spacing:-.055em;
+    }
+    .trailer-copy p:last-child{
+      max-width:410px;
+      margin:0;
+      color:#aaa293;
+      font:clamp(17px,1.35vw,21px)/1.65 'Spectral',serif;
+    }
+    .trailer-media{
+      position:relative;
+      margin:0;
+      padding:clamp(7px,.8vw,12px);
+      background:#090a09;
+      border:1px solid rgba(213,142,119,.38);
+      box-shadow:0 28px 80px rgba(0,0,0,.48),0 0 0 1px rgba(238,233,220,.035) inset;
+    }
+    .trailer-media::before,.trailer-media::after{
+      content:"";
+      position:absolute;
+      z-index:2;
+      width:22px;
+      height:22px;
+      pointer-events:none;
+    }
+    .trailer-media::before{top:-1px;left:-1px;border-top:1px solid #d77559;border-left:1px solid #d77559}
+    .trailer-media::after{right:-1px;bottom:-1px;border-right:1px solid #d77559;border-bottom:1px solid #d77559}
+    .trailer-video{position:relative;aspect-ratio:16 / 9;overflow:hidden;background:#050505}
+    .trailer-video iframe,.trailer-poster{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .trailer-poster{object-fit:cover;filter:saturate(.72) contrast(1.06);transition:transform .7s ease,filter .45s ease}
+    .trailer-launch{
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      align-content:center;
+      gap:13px;
+      padding:24px;
+      color:#fff;
+      text-align:center;
+      background:linear-gradient(180deg,rgba(5,5,5,.08),rgba(5,5,5,.5));
+    }
+    .trailer-launch::before{
+      content:"";
+      width:clamp(62px,6vw,88px);
+      aspect-ratio:1;
+      border:1px solid rgba(255,255,255,.72);
+      border-radius:50%;
+      background:rgba(17,17,15,.5);
+      box-shadow:0 0 0 7px rgba(255,255,255,.035),0 14px 45px rgba(0,0,0,.42);
+      backdrop-filter:blur(5px);
+      transition:transform .3s ease,background .3s ease,border-color .3s ease;
+    }
+    .trailer-launch::after{
+      content:"";
+      position:absolute;
+      top:calc(50% - 27px);
+      left:calc(50% - 7px);
+      border-top:10px solid transparent;
+      border-bottom:10px solid transparent;
+      border-left:16px solid #fff;
+      pointer-events:none;
+    }
+    .trailer-launch strong{font:9px 'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
+    .trailer-launch small{max-width:360px;color:rgba(255,255,255,.72);font:8px/1.45 'Space Mono',monospace;letter-spacing:.06em}
+    .trailer-video:hover .trailer-poster{transform:scale(1.02);filter:saturate(.9) contrast(1.04)}
+    .trailer-launch:hover::before,.trailer-launch:focus-visible::before{transform:scale(1.07);background:#d77559;border-color:#d77559}
+    .trailer-launch:focus-visible{outline:2px solid #d77559;outline-offset:-5px}
+    .trailer-media figcaption{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      padding:12px 3px 2px;
+      color:#777064;
+      font:8px 'Space Mono',monospace;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    @media(max-width:900px){
+      .trailer-grid{grid-template-columns:1fr;align-items:start}
+      .trailer-copy{max-width:650px}
+      .trailer-copy h2{font-size:clamp(55px,11vw,92px)}
+    }
+    @media(max-width:600px){
+      .trailer{padding:88px var(--pad)}
+      .trailer::before{top:26px}
+      .trailer-grid{gap:34px}
+      .trailer-copy h2{margin-bottom:18px;font-size:54px}
+      .trailer-media{padding:5px}
+      .trailer-media figcaption{padding-top:10px;font-size:7px;letter-spacing:.08em}
+      .trailer-media figcaption span:last-child{display:none}
+    }
+
     /* Individual character portraits */
     .cast-grid article .character-photo{
       width:100%;
@@ -386,8 +513,8 @@
 </head>
 <body>
   <div class="film-grain" aria-hidden="true"></div><div class="progress"><span id="progressBar"></span></div>
-  <header class="site-head" id="siteHead"><a class="wordmark" href="#portada"><small>A NOVEL BY</small><b>MOISÉS CORRAL</b></a><nav aria-label="Navigation"><a href="#premisa">Premise</a><a href="#campo">The place</a><a href="#personajes">Characters</a><a href="#fragmento">Read</a><a href="#comprar">Buy</a></nav><div class="external-nav" aria-label="Other sites"><a class="destination-link continuum-link" href="../index.html">CONTINUUM ↗</a><a class="destination-link author-link" href="https://moisescorral.es/en/" target="_blank" rel="noopener" aria-label="Visit Moisés Corral's website and discover his other books (opens in a new tab)">MOISÉS CORRAL ↗</a></div><button id="menuButton" class="menu-button" type="button" aria-expanded="false">Index</button></header>
-  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="#premisa">Premise</a><a href="#campo">Campo la Carrera</a><a href="#samantha">Samantha</a><a href="#personajes">Characters</a><a href="#viaje">The journey</a><a href="#fragmento">Excerpt</a><a href="#ilustraciones">Illustrations</a><a href="#comprar">Buy</a><a class="mobile-destination mobile-continuum" href="../index.html">Discover CONTINUUM ↗<small>The official version of the future</small></a><a class="mobile-destination mobile-author" href="https://moisescorral.es/en/" target="_blank" rel="noopener" aria-label="Visit Moisés Corral's website and discover his other books (opens in a new tab)">Moisés Corral ↗<small>Author and other books</small></a></nav>
+  <header class="site-head" id="siteHead"><a class="wordmark" href="#portada"><small>A NOVEL BY</small><b>MOISÉS CORRAL</b></a><nav aria-label="Navigation"><a href="#premisa">Premise</a><a href="#campo">The place</a><a href="#personajes">Characters</a><a href="#trailer">Trailer</a><a href="#fragmento">Read</a><a href="#comprar">Buy</a></nav><div class="external-nav" aria-label="Other sites"><a class="destination-link continuum-link" href="../index.html">CONTINUUM ↗</a><a class="destination-link author-link" href="https://moisescorral.es/en/" target="_blank" rel="noopener" aria-label="Visit Moisés Corral's website and discover his other books (opens in a new tab)">MOISÉS CORRAL ↗</a></div><button id="menuButton" class="menu-button" type="button" aria-expanded="false">Index</button></header>
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="#premisa">Premise</a><a href="#campo">Campo la Carrera</a><a href="#samantha">Samantha</a><a href="#personajes">Characters</a><a href="#viaje">The journey</a><a href="#trailer">Official trailer</a><a href="#fragmento">Excerpt</a><a href="#ilustraciones">Illustrations</a><a href="#comprar">Buy</a><a class="mobile-destination mobile-continuum" href="../index.html">Discover CONTINUUM ↗<small>The official version of the future</small></a><a class="mobile-destination mobile-author" href="https://moisescorral.es/en/" target="_blank" rel="noopener" aria-label="Visit Moisés Corral's website and discover his other books (opens in a new tab)">Moisés Corral ↗<small>Author and other books</small></a></nav>
 
   <main>
     <section class="cover" id="portada">
@@ -407,6 +534,26 @@
     </div></section>
 
     <section class="journey" id="viaje"><img src="assets/viaje-pico-la-cerra-whitaker.avif" alt="Samantha and Will climb Pico la Cerra toward the Whitaker farm valley" loading="lazy"><div class="journey-copy reveal"><p class="eyebrow">05 / THE JOURNEY FOR THE TRUTH</p><h2>To find<br>the truth they'll<br>have to cross the fault line.</h2><p>The escape begins in Campo la Carrera and forces them to cross territories where CONTINUUM's rules have started to break down. Every new place proves that nothing is as they believed, and that the rules were never the same for everyone.</p></div></section>
+
+    <section class="trailer" id="trailer" aria-labelledby="trailerTitle">
+      <div class="trailer-grid">
+        <div class="trailer-copy reveal">
+          <p class="eyebrow">OFFICIAL TRAILER</p>
+          <h2 id="trailerTitle">Look up<br>at the sky.</h2>
+          <p>Some stories begin with a promise. This one begins when reality stops obeying.</p>
+        </div>
+        <figure class="trailer-media reveal">
+          <div class="trailer-video" id="trailerPlayer" data-embed="https://www.youtube.com/embed/2GOiSQpWyjc?rel=0&amp;playsinline=1">
+            <img class="trailer-poster" src="https://i.ytimg.com/vi/2GOiSQpWyjc/maxresdefault.jpg" alt="Still from the official Salvar el cielo trailer" loading="lazy" decoding="async">
+            <a class="trailer-launch" id="trailerLaunch" href="https://www.youtube.com/watch?v=2GOiSQpWyjc" aria-label="Play the official Salvar el cielo trailer on this page">
+              <strong>Play trailer</strong>
+              <small>A film by Moisés Corral</small>
+            </a>
+          </div>
+          <figcaption><span>Salvar el cielo / Official trailer</span><span>Play with sound</span></figcaption>
+        </figure>
+      </div>
+    </section>
 
     <section class="excerpt" id="fragmento"><header><p class="eyebrow">06 / AN EXCERPT</p><h2>The beginning</h2><button id="readButton" type="button">Reading mode</button></header><article class="manuscript" id="manuscript"><div class="page-mark">CHAPTER 1</div><p class="first">I don't remember the last time anyone asked me why I live here.</p><p>If someone did, I'd probably have to think about the answer. And that's exactly what I don't do since I arrived in Campo la Carrera. Thinking about reasons is usually the first step toward having to defend them, and no one defends anything here. Things are the way they are, or they stop being that way, without anyone needing to explain it.</p><p>That's what I like most about this place. No one asks.</p><p>In the morning I go out walking before it gets hot, while the air still holds a bit of the night, a faint coolness that never lasts long but always arrives on time. The path drops between the meadows, dips just enough to hide the village, then climbs again, as if it didn't want to let you go too far.</p><p>I walk slowly, with no destination, following a habit I don't remember choosing but that's already part of me. Sometimes I wonder how long I've been doing it. Other times I decide not to.</p><p>Here, no one walks entirely alone. Even if we're not together, I know there are others who wake at the same hour, repeat similar gestures, and share the same silence. We don't talk about it. There's no need. Over time, some people stop being just neighbors. We never agreed to it. It just happens.</p><div class="fade-text">The excerpt continues…</div></article></section>
 
@@ -463,6 +610,22 @@
   <script src="js/app.js"></script>
   <script>
     (() => {
+      const trailerPlayer = document.getElementById('trailerPlayer');
+      const trailerLaunch = document.getElementById('trailerLaunch');
+
+      if (trailerPlayer && trailerLaunch) {
+        trailerLaunch.addEventListener('click', (event) => {
+          event.preventDefault();
+          const iframe = document.createElement('iframe');
+          iframe.src = `${trailerPlayer.dataset.embed}&autoplay=1`;
+          iframe.title = 'Official Salvar el cielo trailer';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+          iframe.allowFullscreen = true;
+          trailerPlayer.replaceChildren(iframe);
+        }, { once: true });
+      }
+
       const portraits = [];
 
       document.querySelectorAll('.cast-grid article').forEach((article) => {

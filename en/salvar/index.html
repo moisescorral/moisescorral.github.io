@@ -3,125 +3,505 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#04101e">
-  <link rel="icon" type="image/svg+xml" href="assets/logo-continuum.svg?v=1">
-  <title>Salvar el cielo | CONTINUUM — Moisés Corral</title>
-  <meta name="description" content="Official website of Salvar el cielo, the novel by Moisés Corral. Discover CONTINUUM, its cities, and the hidden reality of Campo la Carrera.">
+  <meta name="theme-color" content="#11110f">
+  <title>Salvar el cielo — A novel by Moisés Corral</title>
+  <meta name="description" content="Salvar el cielo, the novel by Moisés Corral. In CONTINUUM no one ages, no one gets sick and no one dies. Until now.">
   <meta name="author" content="Moisés Corral">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://moisescorral.es/en/salvar/">
-
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="Moisés Corral">
-  <meta property="og:title" content="Salvar el cielo | CONTINUUM">
-  <meta property="og:description" content="Discover CONTINUUM and the hidden reality of Campo la Carrera on the official website of Salvar el cielo.">
-  <meta property="og:url" content="https://moisescorral.es/en/salvar/">
-  <meta property="og:image" content="https://moisescorral.es/salvar/assets/campo-la-carrera-hero.png">
-  <meta property="og:image:alt" content="Salvar el cielo — CONTINUUM and Campo la Carrera">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Salvar el cielo | CONTINUUM">
-  <meta name="twitter:description" content="Discover CONTINUUM and the hidden reality of Campo la Carrera.">
-  <meta name="twitter:image" content="https://moisescorral.es/salvar/assets/campo-la-carrera-hero.png">
-
-  <link rel="preload" as="image" href="assets/promohero.avif" type="image/avif">
+  <link rel="canonical" href="https://moisescorral.es/en/salvar/libro/">
+  <meta property="og:type" content="book"><meta property="og:locale" content="en_US"><meta property="og:title" content="Salvar el cielo — Moisés Corral"><meta property="og:description" content="In CONTINUUM no one ages, no one gets sick and no one dies. Until now."><meta property="og:url" content="https://moisescorral.es/en/salvar/libro/"><meta property="og:image" content="https://moisescorral.es/salvar/libro/assets/portada-salvar-el-cielo.png">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Salvar el cielo"><meta name="twitter:description" content="Tonight the sky goes off script."><meta name="twitter:image" content="https://moisescorral.es/salvar/libro/assets/portada-salvar-el-cielo.png">
+  <link rel="preload" as="image" href="assets/portada-salvar-el-cielo.avif" type="image/avif"><link rel="preload" as="image" href="assets/portada-salvar-el-cielo.webp" type="image/webp"><link rel="preload" as="image" href="assets/portada-salvar-el-cielo.png" type="image/png">
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    /* Editorial access points: visible without breaking CONTINUUM's visual language. */
-    .topbar{gap:18px}
-    .desktop-nav{align-items:center;gap:clamp(12px,1.7vw,28px)}
-    .desktop-nav .nav-book{
-      position:relative;
-      padding:10px 14px;
-      border:1px solid rgba(124,231,255,.68);
-      background:linear-gradient(135deg,rgba(124,231,255,.17),rgba(40,200,238,.05));
-      color:var(--white);
-      box-shadow:0 0 22px rgba(40,200,238,.13),inset 0 0 16px rgba(124,231,255,.04);
+    .site-head nav a { font-size: 11px; }
+    .premise h2 { font-size: clamp(34px, 4vw, 58px); line-height: 1.08; }
+    @media (max-width: 900px) { .mobile-menu a { font-size: 12px; } }
+    @media (max-width: 600px) { .premise h2 { font-size: 34px; } }
+
+    /* Doors back to the CONTINUUM universe and to the author's website */
+    .site-head{gap:clamp(14px,2.2vw,34px)}
+    .site-head nav{gap:clamp(12px,1.7vw,26px)}
+    .external-nav{display:flex;align-items:center;gap:8px}
+    .external-nav .destination-link{
+      display:inline-flex;
+      align-items:center;
+      min-height:36px;
+      padding:9px 12px;
+      border:1px solid rgba(213,142,119,.68);
+      font:8px 'Space Mono',monospace;
+      letter-spacing:.1em;
       text-transform:uppercase;
-      letter-spacing:.09em;
+      white-space:nowrap;
+      transition:background .25s ease,color .25s ease,box-shadow .25s ease;
     }
-    .desktop-nav .nav-book::before{
-      content:"";
-      position:absolute;
-      left:8px;
-      top:6px;
-      width:3px;
-      height:3px;
-      border-radius:50%;
-      background:var(--cyan);
-      box-shadow:0 0 7px var(--cyan);
+    .external-nav .continuum-link{
+      border-color:#d77559;
+      background:#d77559;
+      color:#11110f;
+      box-shadow:0 0 22px rgba(215,117,89,.16);
     }
-    .desktop-nav .nav-book:hover,.desktop-nav .nav-book:focus-visible{
-      background:var(--cyan);
-      color:var(--navy);
-      box-shadow:0 0 28px rgba(124,231,255,.3);
+    .external-nav .author-link{color:#eee9dc}
+    .external-nav .continuum-link:hover,.external-nav .continuum-link:focus-visible{
+      background:#eee9dc;
+      border-color:#eee9dc;
     }
-    .desktop-nav .nav-author{color:#d8ebf1;white-space:nowrap}
-    .desktop-nav .nav-author span{color:var(--cyan)}
-    .desktop-nav .nav-author:hover,.desktop-nav .nav-author:focus-visible{color:var(--cyan)}
-    .button-book{
-      color:var(--white);
-      border-color:rgba(124,231,255,.58);
-      background:linear-gradient(135deg,rgba(5,31,48,.88),rgba(18,82,103,.52));
-      box-shadow:0 0 25px rgba(40,200,238,.14);
+    .external-nav .author-link:hover,.external-nav .author-link:focus-visible{
+      background:#eee9dc;
+      border-color:#eee9dc;
+      color:#11110f;
     }
-    .button-book:hover,.button-book:focus-visible{
-      color:var(--navy);
-      background:var(--white);
-      border-color:var(--white);
-      transform:translateY(-2px);
-    }
-    .nav-book:focus-visible,.nav-author:focus-visible,.button-book:focus-visible,.mobile-menu a:focus-visible{
-      outline:2px solid var(--cyan);
+    .destination-link:focus-visible,.cover-actions a:focus-visible,.mobile-destination:focus-visible{
+      outline:2px solid #d77559;
       outline-offset:3px;
     }
-    @media(max-width:1150px) and (min-width:901px){
-      .topbar{padding-inline:28px}
-      .desktop-nav{gap:10px;font-size:10px}
-      .desktop-nav .nav-book{padding:9px 10px}
-      .nav-cta{padding:10px 11px;font-size:10px}
+    .cover-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+    .cover-actions a{
+      display:inline-flex;
+      justify-content:space-between;
+      gap:34px;
+      min-width:205px;
+      padding:16px 18px;
+      border:1px solid #d77559;
+      font:9px 'Space Mono',monospace;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      transition:background .25s ease,color .25s ease;
+    }
+    .cover-actions a:hover{background:#d77559;color:#111}
+    .cover-actions .cover-author{background:#eee9dc;border-color:#eee9dc;color:#11110f}
+    .cover-actions .cover-author:hover{background:#d77559;border-color:#d77559}
+    .footer-author{color:#d58e77;border-bottom:1px solid rgba(213,142,119,.55)}
+    @media(max-width:1120px) and (min-width:901px){
+      .site-head{padding-inline:28px;gap:12px}
+      .site-head nav{gap:10px}
+      .site-head nav a{font-size:9px}
+      .external-nav .destination-link{padding:8px 9px;font-size:7px}
     }
     @media(max-width:900px){
-      .mobile-menu{gap:14px;overflow-y:auto}
-      .mobile-menu a{font-size:clamp(18px,5vw,26px);padding:12px 14px}
-      .mobile-menu .mobile-book{
-        margin-top:4px;
-        border:1px solid rgba(124,231,255,.72);
-        background:linear-gradient(135deg,rgba(124,231,255,.17),rgba(40,200,238,.04));
-        color:var(--white);
-        box-shadow:0 0 28px rgba(40,200,238,.14);
+      .external-nav{display:none}
+      .mobile-menu{max-height:calc(100svh - 72px);overflow-y:auto;gap:10px}
+      .mobile-menu .mobile-destination{
+        padding:13px 14px;
+        border:1px solid rgba(213,142,119,.62);
+        color:#eee9dc;
       }
-      .mobile-menu .mobile-book small,.mobile-menu .mobile-author small{
+      .mobile-menu .mobile-continuum{
+        margin-top:4px;
+        background:#d77559;
+        border-color:#d77559;
+        color:#11110f;
+      }
+      .mobile-menu .mobile-destination small{
         display:block;
         margin-top:5px;
-        color:var(--cyan);
-        font:9px 'Space Mono',monospace;
+        font:8px 'Space Mono',monospace;
         letter-spacing:.12em;
-        text-transform:uppercase;
+        opacity:.72;
       }
-      .mobile-menu .mobile-author{color:#d8ebf1;border-color:rgba(124,231,255,.28)}
     }
     @media(max-width:600px){
-      .mobile-menu{padding-top:76px}
-      .hero-actions .button{width:100%;text-align:center}
+      .mobile-menu{top:62px;max-height:calc(100svh - 62px)}
+      .cover-actions{display:grid}
+      .cover-actions a{width:100%;min-width:0}
+    }
+
+    /* Official trailer: a cinematic pause within the archive */
+    .trailer{
+      position:relative;
+      isolation:isolate;
+      overflow:hidden;
+      padding:clamp(90px,11vw,170px) var(--pad);
+      background:
+        radial-gradient(circle at 80% 22%,rgba(213,117,89,.1),transparent 32%),
+        linear-gradient(180deg,#11110f 0%,#171714 55%,#11110f 100%);
+      color:#eee9dc;
+      border-top:1px solid rgba(238,233,220,.12);
+      border-bottom:1px solid rgba(238,233,220,.12);
+    }
+    .trailer::before{
+      content:"TRAILER / FILE 06";
+      position:absolute;
+      top:clamp(30px,4vw,58px);
+      right:var(--pad);
+      color:rgba(213,142,119,.38);
+      font:8px 'Space Mono',monospace;
+      letter-spacing:.18em;
+    }
+    .trailer-grid{
+      display:grid;
+      grid-template-columns:minmax(210px,.38fr) minmax(0,1fr);
+      gap:clamp(38px,7vw,110px);
+      align-items:end;
+      max-width:1500px;
+      margin:0 auto;
+    }
+    .trailer-copy{padding-bottom:clamp(4px,1.2vw,18px)}
+    .trailer-copy .eyebrow{color:#d58e77}
+    .trailer-copy h2{
+      margin:18px 0 24px;
+      font:300 clamp(50px,6.5vw,104px)/.86 'Spectral',serif;
+      letter-spacing:-.055em;
+    }
+    .trailer-copy p:last-child{
+      max-width:410px;
+      margin:0;
+      color:#aaa293;
+      font:clamp(17px,1.35vw,21px)/1.65 'Spectral',serif;
+    }
+    .trailer-media{
+      position:relative;
+      margin:0;
+      padding:clamp(7px,.8vw,12px);
+      background:#090a09;
+      border:1px solid rgba(213,142,119,.38);
+      box-shadow:0 28px 80px rgba(0,0,0,.48),0 0 0 1px rgba(238,233,220,.035) inset;
+    }
+    .trailer-media::before,.trailer-media::after{
+      content:"";
+      position:absolute;
+      z-index:2;
+      width:22px;
+      height:22px;
+      pointer-events:none;
+    }
+    .trailer-media::before{top:-1px;left:-1px;border-top:1px solid #d77559;border-left:1px solid #d77559}
+    .trailer-media::after{right:-1px;bottom:-1px;border-right:1px solid #d77559;border-bottom:1px solid #d77559}
+    .trailer-video{position:relative;aspect-ratio:16 / 9;overflow:hidden;background:#050505}
+    .trailer-video iframe,.trailer-poster{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .trailer-poster{object-fit:cover;filter:saturate(.72) contrast(1.06);transition:transform .7s ease,filter .45s ease}
+    .trailer-launch{
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      align-content:center;
+      gap:13px;
+      padding:24px;
+      color:#fff;
+      text-align:center;
+      background:linear-gradient(180deg,rgba(5,5,5,.08),rgba(5,5,5,.5));
+    }
+    .trailer-launch::before{
+      content:"";
+      width:clamp(62px,6vw,88px);
+      aspect-ratio:1;
+      border:1px solid rgba(255,255,255,.72);
+      border-radius:50%;
+      background:rgba(17,17,15,.5);
+      box-shadow:0 0 0 7px rgba(255,255,255,.035),0 14px 45px rgba(0,0,0,.42);
+      backdrop-filter:blur(5px);
+      transition:transform .3s ease,background .3s ease,border-color .3s ease;
+    }
+    .trailer-launch::after{
+      content:"";
+      position:absolute;
+      top:calc(50% - 27px);
+      left:calc(50% - 7px);
+      border-top:10px solid transparent;
+      border-bottom:10px solid transparent;
+      border-left:16px solid #fff;
+      pointer-events:none;
+    }
+    .trailer-launch strong{font:9px 'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
+    .trailer-launch small{max-width:360px;color:rgba(255,255,255,.72);font:8px/1.45 'Space Mono',monospace;letter-spacing:.06em}
+    .trailer-video:hover .trailer-poster{transform:scale(1.02);filter:saturate(.9) contrast(1.04)}
+    .trailer-launch:hover::before,.trailer-launch:focus-visible::before{transform:scale(1.07);background:#d77559;border-color:#d77559}
+    .trailer-launch:focus-visible{outline:2px solid #d77559;outline-offset:-5px}
+    .trailer-media figcaption{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      padding:12px 3px 2px;
+      color:#777064;
+      font:8px 'Space Mono',monospace;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    @media(max-width:900px){
+      .trailer-grid{grid-template-columns:1fr;align-items:start}
+      .trailer-copy{max-width:650px}
+      .trailer-copy h2{font-size:clamp(55px,11vw,92px)}
+    }
+    @media(max-width:600px){
+      .trailer{padding:88px var(--pad)}
+      .trailer::before{top:26px}
+      .trailer-grid{gap:34px}
+      .trailer-copy h2{margin-bottom:18px;font-size:54px}
+      .trailer-media{padding:5px}
+      .trailer-media figcaption{padding-top:10px;font-size:7px;letter-spacing:.08em}
+      .trailer-media figcaption span:last-child{display:none}
+    }
+
+    /* Individual character portraits */
+    .cast-grid article .character-photo{
+      width:100%;
+      aspect-ratio:4 / 5;
+      object-fit:cover;
+      display:block;
+      margin:0 0 18px;
+      border-radius:2px;
+      filter:none;
+    }
+
+    /* Each character's line is revealed by clicking their portrait */
+    .character-reveal{
+      position:relative;
+      width:100%;
+      aspect-ratio:4 / 5;
+      display:block;
+      margin:0 0 18px;
+      padding:0;
+      overflow:hidden;
+      border:0;
+      border-radius:2px;
+      background:#0d0e0c;
+      color:#fff;
+      text-align:left;
+      cursor:pointer;
+    }
+    .cast-grid article .character-reveal .character-photo{
+      height:100%;
+      margin:0;
+      transition:transform .55s ease, filter .45s ease;
+    }
+    .character-reveal::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      background:linear-gradient(180deg,rgba(6,7,6,.08),rgba(6,7,6,.88));
+      opacity:.16;
+      transition:opacity .4s ease;
+    }
+    .character-reveal-hint{
+      position:absolute;
+      z-index:3;
+      left:16px;
+      bottom:14px;
+      font:8px 'Space Mono',monospace;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      transition:opacity .25s ease;
+    }
+    .character-reveal-quote{
+      position:absolute;
+      inset:0;
+      z-index:2;
+      display:grid;
+      place-items:center;
+      padding:clamp(22px,3vw,38px);
+      font:italic 300 clamp(21px,2vw,29px)/1.35 'Spectral',serif;
+      text-align:center;
+      opacity:0;
+      transform:translateY(12px);
+      transition:opacity .4s ease, transform .4s ease;
+    }
+    .character-reveal:hover .character-photo{transform:scale(1.025)}
+    .character-reveal:focus-visible{outline:2px solid #d58e77;outline-offset:4px}
+    .character-reveal.is-open::after{opacity:.9}
+    .character-reveal.is-open .character-photo{transform:scale(1.035);filter:grayscale(.35) brightness(.42)}
+    .character-reveal.is-open .character-reveal-hint{opacity:0}
+    .character-reveal.is-open .character-reveal-quote{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){
+      .character-reveal *,.character-reveal::after{transition:none!important}
+    }
+
+    /* Gallery with three independent illustrations */
+    .triptych{
+      display:grid;
+      grid-template-columns:542fr 533fr 538fr;
+      gap:12px;
+    }
+    .triptych figure{margin:0;min-width:0}
+    .triptych figure img{display:block;width:100%;height:auto}
+    .triptych figcaption{
+      padding:12px 0 10px;
+      border-top:1px solid #403c34;
+      font:8px 'Space Mono',monospace;
+      letter-spacing:.1em;
+      color:#82796b;
+    }
+    @media(max-width:600px){
+      .triptych{grid-template-columns:1fr;gap:28px}
+    }
+
+    /* Editions and book purchase */
+    .purchase{
+      padding:clamp(95px,10vw,150px) var(--pad);
+      background:#171714;
+      color:#eee9dc;
+      border-top:1px solid rgba(255,255,255,.14);
+    }
+    .purchase-head{
+      display:grid;
+      grid-template-columns:.35fr 1fr;
+      gap:5vw;
+      align-items:start;
+      margin-bottom:clamp(55px,7vw,90px);
+    }
+    .purchase-head h2{
+      max-width:900px;
+      margin:0;
+      font:300 clamp(58px,7vw,110px)/.9 'Spectral',serif;
+      letter-spacing:-.055em;
+    }
+    .purchase-head-copy{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:3vw;
+      margin:35px 0 0;
+      max-width:860px;
+    }
+    .purchase-head-copy p{
+      margin:0;
+      font:18px/1.65 'Spectral',serif;
+      color:#aaa293;
+    }
+    .editions-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      border-top:1px solid rgba(255,255,255,.2);
+      border-bottom:1px solid rgba(255,255,255,.2);
+    }
+    .edition-card{
+      min-width:0;
+      min-height:430px;
+      padding:30px 26px 28px;
+      display:flex;
+      flex-direction:column;
+      border-right:1px solid rgba(255,255,255,.2);
+      position:relative;
+    }
+    .edition-card:last-child{border-right:0}
+    .edition-card.special{
+      background:#d9d1bd;
+      color:#11110f;
+      box-shadow:inset 0 4px 0 #b34b33;
+    }
+    .edition-visual{
+      width:100%;
+      aspect-ratio:2/3;
+      margin:22px 0 30px;
+      overflow:hidden;
+      background:#0d0e10;
+      border:1px solid rgba(255,255,255,.16);
+    }
+    .special .edition-visual{border-color:rgba(17,17,15,.18)}
+    .edition-visual img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .35s ease;
+    }
+    .edition-card:hover .edition-visual img{transform:scale(1.018)}
+    .edition-card.special .edition-visual img{filter:saturate(.88)}
+    .edition-number,.edition-meta{
+      font:8px/1.6 'Space Mono',monospace;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      color:#d58e77;
+    }
+    .special .edition-number,.special .edition-meta{color:#9b3e2a}
+    .edition-card h3{
+      margin:0 0 22px;
+      font:300 clamp(38px,3.3vw,54px)/.9 'Spectral',serif;
+      letter-spacing:-.04em;
+    }
+    .edition-card p{
+      margin:0 0 28px;
+      font:16px/1.65 'Spectral',serif;
+      color:#aaa293;
+    }
+    .special p{color:#433f37}
+    .edition-meta{display:block;margin-top:auto;margin-bottom:18px}
+    .coming-soon{
+      margin-top:auto;
+      padding:20px 0 4px;
+      border-top:1px solid rgba(213,117,89,.48);
+      color:#d77559;
+    }
+    .coming-soon span{
+      display:block;
+      margin-bottom:7px;
+      font:8px 'Space Mono',monospace;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#8f8779;
+    }
+    .coming-soon strong{
+      display:block;
+      font:700 clamp(22px,2.1vw,32px)/1 'Space Mono',monospace;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      text-shadow:0 0 20px rgba(213,117,89,.18);
+    }
+    .edition-action{
+      width:100%;
+      min-height:52px;
+      padding:15px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border:1px solid #d77559;
+      background:transparent;
+      color:inherit;
+      font:8px 'Space Mono',monospace;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      transition:background .25s ease,color .25s ease;
+    }
+    a.edition-action:hover,a.edition-action:focus-visible{
+      background:#d77559;
+      color:#11110f;
+    }
+    a.edition-action:focus-visible{outline:2px solid #eee9dc;outline-offset:4px}
+    button.edition-action{
+      border-color:#8e3827;
+      background:#b34b33;
+      color:#fff8ec;
+      cursor:not-allowed;
+      opacity:1;
+    }
+    .sold-out-stamp{
+      position:absolute;
+      top:26px;
+      right:22px;
+      padding:8px 11px;
+      border:2px solid #b34b33;
+      color:#b34b33;
+      font:700 10px 'Space Mono',monospace;
+      letter-spacing:.12em;
+      transform:rotate(3deg);
+    }
+    @media(max-width:900px){
+      .purchase-head{grid-template-columns:1fr}
+      .editions-grid{grid-template-columns:1fr 1fr}
+      .edition-card:nth-child(2){border-right:0}
+      .edition-card:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.2)}
+    }
+    @media(max-width:600px){
+      .purchase{padding:90px var(--pad)}
+      .purchase-head h2{font-size:52px}
+      .purchase-head-copy{grid-template-columns:1fr;gap:18px}
+      .editions-grid{grid-template-columns:1fr}
+      .edition-card{
+        min-height:0;
+        padding:28px 22px;
+        border-right:0;
+        border-bottom:1px solid rgba(255,255,255,.2);
+      }
+      .edition-card:nth-child(2){border-bottom:1px solid rgba(255,255,255,.2)}
+      .edition-card:last-child{border-bottom:0}
+      .edition-visual{max-width:320px;align-self:center;margin-top:24px}
+      .edition-card h3{font-size:44px}
+      .edition-meta{margin-top:26px}
+      .coming-soon{margin-top:28px;padding-top:18px}
+      .coming-soon strong{font-size:28px}
     }
   </style>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Book",
-      "name": "Salvar el cielo",
-      "author": {
-        "@type": "Person",
-        "name": "Moisés Corral"
-      },
-      "inLanguage": "en",
-      "url": "https://moisescorral.es/en/salvar/",
-      "image": "https://moisescorral.es/salvar/assets/campo-la-carrera-hero.png",
-      "description": "A novel by Moisés Corral about CONTINUUM and the hidden reality of Campo la Carrera."
-    }
-  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Salvar el cielo","author":{"@type":"Person","name":"Moisés Corral"},"inLanguage":"en","url":"https://moisescorral.es/en/salvar/libro/","description":"In CONTINUUM no one ages, no one gets sick and no one dies. Until now."}</script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MSEDP8ESV"></script>
   <script>
@@ -132,316 +512,171 @@
   </script>
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <div class="film-grain" aria-hidden="true"></div><div class="progress"><span id="progressBar"></span></div>
+  <header class="site-head" id="siteHead"><a class="wordmark" href="#portada"><small>A NOVEL BY</small><b>MOISÉS CORRAL</b></a><nav aria-label="Navigation"><a href="#premisa">Premise</a><a href="#campo">The place</a><a href="#personajes">Characters</a><a href="#trailer">Trailer</a><a href="#fragmento">Read</a><a href="#comprar">Buy</a></nav><div class="external-nav" aria-label="Other sites"><a class="destination-link continuum-link" href="../index.html">CONTINUUM ↗</a><a class="destination-link author-link" href="https://moisescorral.es/en/" target="_blank" rel="noopener" aria-label="Visit Moisés Corral's website and discover his other books (opens in a new tab)">MOISÉS CORRAL ↗</a></div><button id="menuButton" class="menu-button" type="button" aria-expanded="false">Index</button></header>
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="#premisa">Premise</a><a href="#campo">Campo la Carrera</a><a href="#samantha">Samantha</a><a href="#personajes">Characters</a><a href="#viaje">The journey</a><a href="#trailer">Official trailer</a><a href="#fragmento">Excerpt</a><a href="#ilustraciones">Illustrations</a><a href="#comprar">Buy</a><a class="mobile-destination mobile-continuum" href="../index.html">Discover CONTINUUM ↗<small>The official version of the future</small></a><a class="mobile-destination mobile-author" href="https://moisescorral.es/en/" target="_blank" rel="noopener" aria-label="Visit Moisés Corral's website and discover his other books (opens in a new tab)">Moisés Corral ↗<small>Author and other books</small></a></nav>
 
-  <header class="topbar" id="topbar">
-    <a class="brand" href="#inicio" aria-label="CONTINUUM, back to home">
-      <img src="assets/logo-continuum.svg" class="brand-logo" width="46" height="30" alt="" aria-hidden="true" decoding="async">
-      <span>CONTINUUM</span>
-    </a>
-    <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#proyecto">Project</a>
-      <a href="#destinos">Destinations</a>
-      <a href="#directorio">Directorate</a>
-      <a href="#movilidad">Mobility</a>
-      <a class="nav-book" href="libro/index.html" aria-label="Discover the book Salvar el cielo">The book&nbsp; ↗</a>
-      <a class="nav-author" href="https://moisescorral.es/en/" target="_blank" rel="noopener" aria-label="Meet Moisés Corral and his other books (opens in a new tab)">Moisés Corral <span>↗</span></a>
-    </nav>
-    <a class="nav-cta" href="#reserva">Request access <span>↗</span></a>
-    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">Menu</button>
-  </header>
+  <main>
+    <section class="cover" id="portada">
+      <div class="cover-poster reveal"><img src="assets/portada-salvar-el-cielo.avif" alt="Samantha looks up at an impossible aurora over Campo la Carrera"></div>
+      <div class="cover-ad reveal"><p class="label">COMING SOON</p><h2>There's nowhere to hide here.<br>Not even from time.</h2><div class="cover-actions"><a href="#premisa">Discover the story <span>↓</span></a><a class="cover-author" href="https://moisescorral.es/en/" target="_blank" rel="noopener" aria-label="Meet Moisés Corral and discover his other books (opens in a new tab)">Meet the author <span>↗</span></a></div><div class="ad-code">FILE / CLC-07<br>INTEGRITY / 91%</div></div>
+      <p class="cover-quote">"Tonight the sky<br>goes off script."</p>
+    </section>
 
-  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <button class="menu-close" id="menuClose" aria-label="Close menu">×</button>
-    <a href="#proyecto">01 — Project</a>
-    <a href="#destinos">02 — Destinations</a>
-    <a href="#seguridad">03 — Security</a>
-    <a href="#directorio">04 — Directorate</a>
-    <a href="#reserva">05 — Reservation</a>
-    <a class="mobile-book" href="libro/index.html">06 — The book <small>Discover Salvar el cielo ↗</small></a>
-    <a class="mobile-author" href="https://moisescorral.es/en/" target="_blank" rel="noopener" aria-label="Meet Moisés Corral and his other books (opens in a new tab)">07 — Moisés Corral <small>Author and other books ↗</small></a>
-  </aside>
+    <section class="premise" id="premisa"><aside><span>01</span><p>THE PREMISE</p></aside><article class="reveal"><p class="eyebrow">SOMETHING IMPOSSIBLE HAS HAPPENED</p><h2>In Campo la Carrera, Samantha has found the life she always wanted.<br>But a threat is about to destroy it.<br>And her past is coming with it.</h2><div class="premise-columns"><p>Campo la Carrera is one of the quietest places in CONTINUUM. There, far from the big cities, life is simpler.</p><p>Until the impossible happens. Something that should never have come back exists again. And nothing will ever be the same.</p></div><p class="classified">THE REST OF THE FILE REMAINS CLASSIFIED</p></article></section>
 
-  <main id="continuum">
-    <section class="hero" id="inicio">
-      <div class="hero-image" aria-hidden="true"></div>
-      <div class="hero-shade" aria-hidden="true"></div>
-      <div class="hero-orbit orbit-one" aria-hidden="true"></div>
-      <div class="hero-orbit orbit-two" aria-hidden="true"></div>
-      <div class="hero-copy reveal">
-        <p class="eyebrow"><span></span> A LIFE WITHOUT AN END · YOUR FUTURE STARTS HERE</p>
-        <h1>Living<br><em>was only the beginning.</em></h1>
-        <p class="hero-lede">An ecosystem of cities, towns and unique places where technology, culture and nature converge to offer a more human way of living.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#proyecto">Discover CONTINUUM <span>↓</span></a>
-          <a class="button button-book" href="libro/index.html" aria-label="Enter the website for the book Salvar el cielo">Explore the book <span>↗</span></a>
-          <button class="button button-ghost" id="soundButton" type="button"><span class="sound-bars" aria-hidden="true">▮▮▮</span> Ambience <b>OFF</b></button>
+    <section class="campo" id="campo"><img src="assets/campo-la-carrera.avif" alt="Campo la Carrera" loading="lazy"><div class="campo-caption reveal"><span>02 / THE PLACE</span><h2>Campo<br>la Carrera</h2><p>A small village at the farthest edge of the world. A refuge for those who want to get away from CONTINUUM's noise. Here, no one asks where you came from or how long you plan to stay.</p><p>But everything is about to change.</p></div><div class="coordinates">43° N / NON-PRIORITY REGION<br>POPULATION: VARIABLE</div></section>
+
+    <section class="samantha" id="samantha"><div class="samantha-copy reveal"><p class="eyebrow">03 / THE PROTAGONIST</p><h2>Samantha<br>Reed</h2><blockquote>"In Campo la Carrera no one needs to order others around. That's why I stayed"</blockquote><p>Samantha chose Campo la Carrera to live apart from other people's decisions. Observant, stubborn and more vulnerable than she lets anyone see, she'll be the first to understand that what happened is no isolated accident.</p><p>To find an answer, she'll have to leave the only place she had begun to feel was hers.</p></div><figure class="samantha-photo reveal"><img src="assets/samantha-original.avif" alt="Portrait of Samantha Reed" loading="lazy"><figcaption>SUBJECT / SAMANTHA REED<br>STATUS / ACTIVE</figcaption></figure></section>
+
+    <section class="cast" id="personajes"><header class="cast-head reveal"><p class="eyebrow">04 / THE CHARACTERS</p><h2>Six people.<br>Six ways to hide the truth.</h2></header><figure class="cast-image reveal"><img src="assets/personajes/personajes.avif" alt="Will, Naomi, Thomas, Benjamin, Daniel and Cinthya" loading="lazy"><figcaption>From left to right: Will · Naomi · Thomas · Benjamin · Daniel · Cinthya</figcaption></figure><div class="cast-grid">
+      <article><img class="character-photo" src="assets/personajes/will.avif" alt="Will" loading="lazy"><b>01</b><h3>Will</h3><p>The new neighbor in Campo la Carrera. Cheeky, sarcastic and too mysterious to go unnoticed. He arrived in the village with a backpack, a half-told story and too many secrets.</p><blockquote>"With Will you never know which is more dangerous: what he tells you, or everything he decides to keep quiet."</blockquote></article><article><img class="character-photo" src="assets/personajes/naomi.avif" alt="Naomi" loading="lazy"><b>02</b><h3>Naomi</h3><p>Samantha's best friend and the person she trusts most. Smart, decisive and always ready to protect her own, she knows when to step in and when to stay silent. But even the most loyal friendship can hide things that were never said.</p><blockquote>"Naomi is always there when Samantha needs her. The question is whether her friendship is as real as Samantha thinks."</blockquote></article><article><img class="character-photo" src="assets/personajes/thomas.avif" alt="Thomas" loading="lazy"><b>03</b><h3>Thomas</h3><p>The Directorate's liaison and the official voice of CONTINUUM in Campo la Carrera. Impeccable, methodical and built to always have an answer, even when the system doesn't. But when certainties start to fail, Thomas will have to decide whether to keep obeying or learn to think for himself.</p><blockquote>"Thomas was built to follow the Directorate's orders. When everything fails, he can't afford to do the same."</blockquote></article><article><img class="character-photo" src="assets/personajes/benjamin.avif" alt="Benjamin" loading="lazy"><b>04</b><h3>Benjamin</h3><p>The first to help and the last to ask questions. His home has always been open to anyone who needed it, and everyone considers him the best possible neighbor. Almost everyone. Because some people have their reasons to distrust him, and even the best-kept secrets eventually come to light.</p><blockquote>"Benjamin is always ready to open his door to you. What no one knows is what he keeps hidden behind it."</blockquote></article><article><img class="character-photo" src="assets/personajes/cinthya.avif" alt="Cinthya" loading="lazy"><b>05</b><h3>Cinthya</h3><p>The authority Campo la Carrera never officially named. Firm, watchful and always ready to step in, she's spent far too long waiting for something to go wrong. She doesn't need to keep secrets of her own: she knows everyone else's, and knows exactly when to use them.</p><blockquote>"In Campo la Carrera everyone is hiding something. Cinthya is the only one who knows where to look."</blockquote></article><article><img class="character-photo" src="assets/personajes/daniel.avif" alt="Daniel" loading="lazy"><b>06</b><h3>Daniel</h3><p>The only child in Campo la Carrera. He has learned to live among absences, clinging to the hope of a reunion that never comes. When he needs help, he looks for Samantha first, the only person able to make him feel like he isn't completely alone.</p><blockquote>"Daniel has never stopped waiting. What no one dares tell him is how long a promise can last."</blockquote></article>
+    </div></section>
+
+    <section class="journey" id="viaje"><img src="assets/viaje-pico-la-cerra-whitaker.avif" alt="Samantha and Will climb Pico la Cerra toward the Whitaker farm valley" loading="lazy"><div class="journey-copy reveal"><p class="eyebrow">05 / THE JOURNEY FOR THE TRUTH</p><h2>To find<br>the truth they'll<br>have to cross the fault line.</h2><p>The escape begins in Campo la Carrera and forces them to cross territories where CONTINUUM's rules have started to break down. Every new place proves that nothing is as they believed, and that the rules were never the same for everyone.</p></div></section>
+
+    <section class="trailer" id="trailer" aria-labelledby="trailerTitle">
+      <div class="trailer-grid">
+        <div class="trailer-copy reveal">
+          <p class="eyebrow">OFFICIAL TRAILER</p>
+          <h2 id="trailerTitle">Look up<br>at the sky.</h2>
+          <p>Some stories begin with a promise. This one begins when reality stops obeying.</p>
         </div>
-      </div>
-      <div class="hero-data" aria-label="System data">
-        <div><small>CONNECTED CITIES</small><strong>100%</strong></div>
-        <div><small>WELLBEING INDEX</small><strong>99.7<sup>%</sup></strong></div>
-        <div><small>SYSTEM</small><strong class="status"><i></i> OPTIMAL</strong></div>
+        <figure class="trailer-media reveal">
+          <div class="trailer-video" id="trailerPlayer" data-embed="https://www.youtube.com/embed/2GOiSQpWyjc?rel=0&amp;playsinline=1">
+            <img class="trailer-poster" src="https://i.ytimg.com/vi/2GOiSQpWyjc/maxresdefault.jpg" alt="Still from the official Salvar el cielo trailer" loading="lazy" decoding="async">
+            <a class="trailer-launch" id="trailerLaunch" href="https://www.youtube.com/watch?v=2GOiSQpWyjc" aria-label="Play the official Salvar el cielo trailer on this page">
+              <strong>Play trailer</strong>
+              <small>A film by Moisés Corral</small>
+            </a>
+          </div>
+          <figcaption><span>Salvar el cielo / Official trailer</span><span>Play with sound</span></figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="manifesto section-pad" id="proyecto">
-      <div class="section-index">01 / THE PROJECT</div>
-      <div class="manifesto-grid">
-        <h2 class="reveal">We don't build<br>the future.<br><em>We live in it.</em></h2>
-        <div class="manifesto-copy reveal">
-          <p>CONTINUUM is humanity's greatest achievement: the culmination of progress, where calm, connectivity, belonging, efficiency and beauty converge into a new way of existing.</p>
-          <p>Each person is assigned a place and a culture. All of them share the same promise: that everyday life feels extraordinary again, and that time is entirely your own.</p>
-          <div class="metric-row">
-            <span><b>0%</b> net emissions</span>
-            <span><b>24/7</b> civic assistance</span>
-            <span><b>18 min</b> Transition time</span>
+    <section class="excerpt" id="fragmento"><header><p class="eyebrow">06 / AN EXCERPT</p><h2>The beginning</h2><button id="readButton" type="button">Reading mode</button></header><article class="manuscript" id="manuscript"><div class="page-mark">CHAPTER 1</div><p class="first">I don't remember the last time anyone asked me why I live here.</p><p>If someone did, I'd probably have to think about the answer. And that's exactly what I don't do since I arrived in Campo la Carrera. Thinking about reasons is usually the first step toward having to defend them, and no one defends anything here. Things are the way they are, or they stop being that way, without anyone needing to explain it.</p><p>That's what I like most about this place. No one asks.</p><p>In the morning I go out walking before it gets hot, while the air still holds a bit of the night, a faint coolness that never lasts long but always arrives on time. The path drops between the meadows, dips just enough to hide the village, then climbs again, as if it didn't want to let you go too far.</p><p>I walk slowly, with no destination, following a habit I don't remember choosing but that's already part of me. Sometimes I wonder how long I've been doing it. Other times I decide not to.</p><p>Here, no one walks entirely alone. Even if we're not together, I know there are others who wake at the same hour, repeat similar gestures, and share the same silence. We don't talk about it. There's no need. Over time, some people stop being just neighbors. We never agreed to it. It just happens.</p><div class="fade-text">The excerpt continues…</div></article></section>
+
+    <section class="gallery" id="ilustraciones"><header class="reveal"><p class="eyebrow">07 / ILLUSTRATIONS</p><h2>Images from a world<br>that still looks perfect.</h2></header><div class="triptych reveal"><figure><img src="assets/aurora.avif" alt="Samantha watches an aurora borealis over Campo la Carrera" loading="lazy"><figcaption>01 / THE FIRST CRACK</figcaption></figure><figure><img src="assets/tren.avif" alt="Samantha and Will watch a steam train moving through the forest with no tracks" loading="lazy"><figcaption>02 / THE TRACKLESS TRAIN</figcaption></figure><figure><img src="assets/investiga.avif" alt="Samantha investigates in the futuristic streets of Capital" loading="lazy"><figcaption>03 / THE INVESTIGATION</figcaption></figure></div></section>
+
+    <section class="purchase" id="comprar" aria-labelledby="purchaseTitle">
+      <header class="purchase-head reveal">
+        <p class="eyebrow">08 / EDITIONS</p>
+        <div>
+          <h2 id="purchaseTitle">Choose how to step<br>into the story.</h2>
+          <div class="purchase-head-copy">
+            <p>Four editions of <em>Salvar el cielo</em>. The first was a one-time print run; the rest are coming very soon.</p>
+            <p>The hardcover, paperback and eBook are currently in preparation for launch.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="ceo-section section-pad" id="vision">
-      <div class="ceo-portrait reveal">
-        <img src="assets/adam.avif" class="ceo-photo" alt="Institutional portrait of Adam Lazar" decoding="async">
-        <div class="scanline" aria-hidden="true"></div>
-        <p>EXECUTIVE FILE / AL-001</p>
-      </div>
-      <article class="ceo-message reveal">
-        <p class="eyebrow"><span></span> Message from the President</p>
-        <blockquote>"For millennia, humanity wondered what came next. We decided to build it."</blockquote>
-        <p>CONTINUUM was born from a simple question: what if we could avoid the inevitable? Today, at last, we have the answer humankind has searched for since the beginning of time.</p>
-        <div class="signature">Adam Lazar</div>
-        <small>PRESIDENT OF CONTINUUM</small>
-      </article>
-    </section>
-
-    <section class="gallery-strip" aria-label="Moments of life in CONTINUUM">
-      <div class="gallery-card">
-        <img src="assets/arquitectura.avif" alt="Biotic architecture integrated into nature" loading="lazy" decoding="async">
-        <span>Unique architecture</span>
-      </div>
-      <div class="gallery-card">
-        <img src="assets/comunidad.avif" alt="Shared life in CONTINUUM" loading="lazy" decoding="async">
-        <span>Shared life</span>
-      </div>
-      <div class="gallery-card">
-        <img src="assets/transporte.avif" alt="Silent technology integrated into the landscape" loading="lazy" decoding="async">
-        <span>Efficient technology</span>
-      </div>
-      <div class="gallery-card">
-        <img src="assets/paisaje.avif" alt="Protected natural landscape of CONTINUUM" loading="lazy" decoding="async">
-        <span>Spectacular landscape</span>
-      </div>
-    </section>
-
-    <section class="partners section-pad">
-      <p class="eyebrow center"><span></span> A partnership for what's possible <span></span></p>
-      <div class="partner-grid" aria-label="Partner organizations">
-        <div>
-          <img src="assets/logo-solythera.png" alt="Solythera" loading="lazy" decoding="async">
-          <small>ENERGY</small>
-        </div>
-        <div>
-          <img src="assets/logo-iterion.png" alt="Iterion" loading="lazy" decoding="async">
-          <small>MOBILITY</small>
-        </div>
-        <div>
-          <img src="assets/logo-orvellum.png" alt="Orvellum" loading="lazy" decoding="async">
-          <small>ARCHITECTURE</small>
-        </div>
-        <div>
-          <img src="assets/logo-takahara.png" alt="Takahara Corporation" loading="lazy" decoding="async">
-          <small>BIOSYSTEMS</small>
-        </div>
-        <div>
-          <img src="assets/logo-synaptara.png" alt="Synaptara" loading="lazy" decoding="async">
-          <small>CONNECTIVITY</small>
-        </div>
-      </div>
-    </section>
-
-    <section class="destinations section-pad" id="destinos">
-      <div class="section-head reveal">
-        <div><p class="section-index">02 / LANDMARK PLACES</p><h2>Four ways<br>to come home.</h2></div>
-        <p>CONTINUUM is full of special places with unique characteristics. Here are 4 examples.</p>
-      </div>
-      <div class="city-grid">
-        <article class="city city-capital reveal" tabindex="0">
-          <img class="city-image" src="assets/capital.avif" alt="Capital, a hyper-technological city in the Eastern Pacific" loading="lazy" decoding="async">
-          <div class="city-content"><span>01 / EASTERN PACIFIC</span><h3>Capital</h3><p>The hyper-technological heart of CONTINUUM. A vertical, luminous, hyper-connected metropolis ruled by the imposing Needle.</p><b>Explore the city →</b></div>
+      </header>
+      <div class="editions-grid reveal">
+        <article class="edition-card special">
+          <span class="edition-number">01 / Exclusive print run</span>
+          <span class="sold-out-stamp" aria-label="Sold-out edition">SOLD OUT</span>
+          <figure class="edition-visual"><img src="assets/publicidad/edicion-especial.avif" alt="Special edition of Salvar el cielo with signed book, print and bookmark" loading="lazy"></figure>
+          <h3>Special<br>edition</h3>
+          <p>A limited, numbered edition signed by the author, accompanied by an exclusive bookmark and an A3 print. A one-time run that will never be repeated.</p>
+          <span class="edition-meta">100 copies · Included gifts</span>
+          <button class="edition-action" type="button" disabled aria-disabled="true"><span>Sold out edition</span><span aria-hidden="true">×</span></button>
         </article>
-        <article class="city city-helvetia reveal" tabindex="0">
-          <img class="city-image" src="assets/helvetia.avif" alt="Helvetia, an alpine town beside a mountain lake" loading="lazy" decoding="async">
-          <div class="city-content"><span>02 / ALPINE CORRIDOR</span><h3>Helvetia</h3><p>Clear lakes, serene architecture and mobility that disappears beneath the landscape.</p><b>Explore the city →</b></div>
+        <article class="edition-card">
+          <span class="edition-number">02 / Physical edition</span>
+          <figure class="edition-visual"><img src="assets/publicidad/tapadura.avif" alt="Hardcover edition of Salvar el cielo" loading="lazy"></figure>
+          <h3>Hard<br>cover</h3>
+          <p>The collector's edition for those who want to keep the story in its most carefully crafted format.</p>
+          <div class="coming-soon" aria-label="Hardcover coming soon"><span>Launch</span><strong>Coming soon</strong></div>
         </article>
-        <article class="city city-salama reveal" tabindex="0">
-          <img class="city-image" src="assets/salama.avif" alt="Salama, a monumental Islamic megacity" loading="lazy" decoding="async">
-          <div class="city-content"><span>03 / SOUTHERN MERIDIAN</span><h3>Salama</h3><p>Shaded courtyards, water gardens and an Islamic city that turns innovation into hospitality.</p><b>Explore the city →</b></div>
+        <article class="edition-card">
+          <span class="edition-number">03 / Physical edition</span>
+          <figure class="edition-visual"><img src="assets/publicidad/tapablanda.avif" alt="Paperback edition of Salvar el cielo" loading="lazy"></figure>
+          <h3>Paper<br>back</h3>
+          <p>A flexible, lightweight edition, made to go with you both inside and outside Campo la Carrera.</p>
+          <div class="coming-soon" aria-label="Paperback coming soon"><span>Launch</span><strong>Coming soon</strong></div>
         </article>
-        <article class="city city-shinkei reveal" tabindex="0">
-          <img class="city-image" src="assets/shinkei.avif" alt="Shinkei, a town of Shinto and Buddhist tradition integrated into nature" loading="lazy" decoding="async">
-          <div class="city-content"><span>04 / EASTERN ARCHIPELAGO</span><h3>Shinkei</h3><p>Shinto shrines and Buddhist temples sit among cedars, waterfalls and paths where technology preserves the silence.</p><b>Explore the city →</b></div>
+        <article class="edition-card">
+          <span class="edition-number">04 / Digital edition</span>
+          <figure class="edition-visual"><img src="assets/publicidad/ebook.avif" alt="Kindle eBook edition of Salvar el cielo shown on an e-reader" loading="lazy"></figure>
+          <h3>Kindle<br>eBook</h3>
+          <p>The full story in digital format, ready to start reading instantly on Kindle.</p>
+          <div class="coming-soon" aria-label="Kindle eBook coming soon"><span>Launch</span><strong>Coming soon</strong></div>
         </article>
       </div>
     </section>
 
-    <section class="security section-pad" id="seguridad">
-      <div class="watchdogs-card reveal">
-        <img class="watchdogs-photo" src="assets/dogs.avif" alt="WatchDogs unit agents assisting a CONTINUUM resident" loading="lazy" decoding="async">
-        <span class="watchdogs-label">WATCHDOGS / PROXIMITY UNIT</span>
-      </div>
-      <div class="security-copy reveal">
-        <p class="section-index">03 / PROXIMITY SECURITY</p>
-        <h2>Caring also<br>means <em>being close.</em></h2>
-        <p>The WatchDogs don't patrol from a distance: they're part of everyday life. Trained to anticipate risks, guide and assist, they combine a human presence with discreet technology so every neighborhood feels protected without feeling watched.</p>
-        <ul class="feature-list">
-          <li><span>01</span><div><b>Human response</b><small>A proximity team in under four minutes.</small></div></li>
-          <li><span>02</span><div><b>Non-invasive prevention</b><small>Discreet, transparent and auditable systems.</small></div></li>
-          <li><span>03</span><div><b>Trusted presence</b><small>Recognizable, trained agents close to every community.</small></div></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="directorate section-pad" id="directorio">
-      <div class="directorate-head reveal">
-        <p class="section-index">04 / HOW IT WORKS</p>
-        <h2>A complex system.<br>A familiar voice.</h2>
-      </div>
-      <div class="thomas-grid">
-        <div class="thomas-card reveal" id="thomasCard">
-          <div class="thomas-photo">
-            <img src="assets/thomas.avif" alt="Institutional portrait of Thomas, Directorate liaison" loading="lazy" decoding="async">
-            <div class="id-scan">VERIFIED</div>
-          </div>
-          <div class="thomas-meta"><span>TH-4471</span><strong>THOMAS</strong><small>DIRECTORATE LIAISON</small></div>
-        </div>
-        <article class="thomas-message reveal">
-          <p class="eyebrow"><span></span> Meet Thomas</p>
-          <h3>"My job is to make sure you never have to think about how any of this works."</h3>
-          <p>Thomas is your link to the Directorate: the body that coordinates transport, energy, housing and services in every community. He translates complex decisions into simple answers.</p>
-          <div class="directorate-functions">
-            <span><b>01</b> Coordinate</span><span><b>02</b> Listen</span><span><b>03</b> Resolve</span>
-          </div>
-          <button class="text-button" id="thomasButton" type="button">Send a question to Thomas →</button>
-          <p class="thomas-answer" id="thomasAnswer" aria-live="polite"></p>
-        </article>
-      </div>
-    </section>
-
-    <section class="mobility section-pad" id="movilidad">
-      <figure class="mobility-visual reveal">
-        <img src="assets/movilidad.avif" alt="CONTINUUM mobility network with air transport, levitation train, autonomous shuttles, climate-controlled bike lane and pedestrian corridor" loading="lazy" decoding="async">
-        <figcaption class="mobility-legend">
-          <span><b>01</b> Levitation</span>
-          <span><b>02</b> Shuttles</span>
-          <span><b>03</b> Bike lanes</span>
-          <span><b>04</b> Pedestrians</span>
-        </figcaption>
-      </figure>
-      <div class="mobility-copy reveal">
-        <p class="section-index">05 / MOBILITY</p>
-        <h2>Far away is<br>a thing of the past.</h2>
-        <p>Levitation trains, autonomous shuttles, climate-controlled bike lanes and pedestrian corridors form a single, accessible network.</p>
-        <div class="mobility-stats"><span><b>420</b> km/h intercity</span><span><b>100%</b> clean energy</span></div>
-      </div>
-    </section>
-
-    <section class="faq section-pad" id="preguntas">
-      <div class="faq-intro reveal"><p class="section-index">06 / FREQUENTLY ASKED QUESTIONS</p><h2>Before<br>taking the step.</h2><p>Everything you need to know to start your access application.</p></div>
-      <div class="accordion" id="accordion">
-        <details><summary>What exactly is CONTINUUM?<span>+</span></summary><p>CONTINUUM is the next step in human evolution: a revolutionary discovery that frees us from the limits of the physical body and opens a new era for our species.</p></details>
-        <details><summary>Who can apply for residency?<span>+</span></summary><p>Any adult may apply for access to the system, provided their medical condition allows it. You'll find detailed information at any of the CONTINUUM regional offices located around the world. You may also include your loved ones in your application, so you never have to be separated from them.</p></details>
-        <details><summary>Can I choose my city?<span>+</span></summary><p>Once inside the system and after completing the Transition process, you may move freely throughout CONTINUUM territory, except for technical areas and restricted-access communities.</p></details>
-        <details><summary>How is the entry fee paid?<span>+</span></summary><p>The access fee must be paid in advance for each member included in the contract. If any person is unable to complete the Transition, the corresponding amount will be refunded to their legal heirs or previously designated beneficiaries.</p></details>
-        <details class="faq-corrupt"><summary>What are the restricted zones?<span>+</span></summary><p class="glitch-copy" data-clean="You don't ask about something that doesn't exist. Don't push it." data-corrupt="YOU DON'T ASK ABOUT SOMETHING THAT DOESN'T EXIST. DON'T PUSH IT.">You don't ask about something that doesn't exist. Don't push it.</p></details>
-      </div>
-    </section>
-
-    <section class="reservation section-pad" id="reserva">
-      <div class="reservation-copy reveal">
-        <p class="eyebrow"><span></span> 2102 admission cycle</p>
-        <h2>Your place in the<br>future starts here.</h2>
-        <p>Leave us your details and a representative from your nearest office will get in touch with you. There are <strong id="spots">127</strong> spots left in this cycle.</p>
-      </div>
-      <form class="reservation-form reveal" id="reservationForm" action="https://formspree.io/f/mykvenll" method="POST">
-        <input type="hidden" name="origen" value="CONTINUUM — Salvar el cielo">
-        <input class="form-honey" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <label>Full name<input required name="name" autocomplete="name" placeholder="Your name"></label>
-        <label>Email<input required name="email" autocomplete="email" type="email" placeholder="you@email.com"></label>
-        <div class="consent-group">
-          <label class="consent"><input required name="consentimiento_datos" value="Sí" type="checkbox"><span>I authorize the processing of my data to handle this access request.</span></label>
-          <label class="consent optional"><input id="bookConsent" name="consentimiento_novedades" value="Sí" type="checkbox"><span>I want to receive email updates about <em>Salvar el cielo</em> and its release. I can withdraw my consent at any time.</span></label>
-        </div>
-        <details class="form-privacy">
-          <summary>Data protection information</summary>
-          <p><strong>Data controller:</strong> Moisés Corral. <strong>Purpose:</strong> to handle your request and, only if you check the optional box, to send you updates about <em>Salvar el cielo</em>. <strong>Legal basis:</strong> your consent. The form is processed through Formspree. You can withdraw your consent and exercise your rights of access, rectification or deletion by writing to <a href="mailto:contacto@moisescorral.es">contacto@moisescorral.es</a>.</p>
-        </details>
-        <button class="button button-primary submit-button" type="submit">Request access <span>→</span></button>
-        <p class="form-status" id="formStatus" aria-live="polite"></p>
-      </form>
-    </section>
-
-    <section class="breach" id="breach" aria-label="System failure">
-      <div class="breach-lines" aria-hidden="true"></div>
-      <div class="breach-content">
-        <p class="system-message" id="systemMessage">CHECKING SYSTEM INTEGRITY…</p>
-        <div class="integrity"><span id="integrityBar"></span></div>
-        <strong id="integrityValue">100%</strong>
-        <h2 class="breach-title" data-text="EVERYTHING IS FINE.">EVERYTHING IS FINE.</h2>
-        <p class="breach-hidden" id="breachHidden">The official version ends here.</p>
-        <button class="breach-button" id="breachButton" type="button" disabled>RECOVER HIDDEN FILE</button>
-      </div>
-    </section>
+    <section class="enter"><p class="eyebrow">BEFORE YOU READ THE STORY</p><h2>Discover<br>the promise.</h2><p>Visit the official CONTINUUM website. Discover its cities, its services and the eternal life it offers. Everything works exactly as it should.</p><a href="../index.html">Enter CONTINUUM <span>↗</span></a><small>NOT EVERYTHING YOU'LL FIND THERE IS TRUE</small></section>
   </main>
-
-  <section class="campo" id="campo" aria-hidden="true">
-    <header class="archive-header">
-      <a href="#campo" class="archive-brand">CLC ARCHIVE / 07</a>
-      <span>RECOVERED · INCOMPLETE · DO NOT DISTRIBUTE</span>
-      <button id="returnButton" type="button">Back to CONTINUUM</button>
-    </header>
-    <section class="campo-hero">
-      <div class="campo-image"></div>
-      <div class="campo-copy reveal-field">
-        <p>FILE: SALVAR EL CIELO</p>
-        <h2>Campo<br>la Carrera</h2>
-        <p class="campo-lede">The future they promised never arrives here. This is where the story they tried to erase begins.</p>
-        <a href="#historia">Open file ↓</a>
-      </div>
-      <div class="archive-stamp">ARCHIVE<br>RECOVERED</div>
-    </section>
-    <section class="field-section history" id="historia">
-      <aside><span>01</span><p>THE STORY</p></aside>
-      <article>
-        <p class="field-kicker">What was left off the map</p>
-        <h3>The sky belonged to everyone.<br>Until someone decided to <em>manage it.</em></h3>
-        <div class="story-columns">
-          <p>Campo la Carrera is a small, dry, stubborn place. While the world watches CONTINUUM's perfect cities in fascination, here a group of people keeps documents, memories and questions the Directorate would rather keep buried.</p>
-          <p>The arrival of an impossible message breaks the village's routine. Its source points to Thomas, the friendly official who smiles from the corporate website. But the voice in the message doesn't match the official version.</p>
-        </div>
-        <div class="redacted-note">THE PROJECT DOESN'T SAVE THE SKY. <s>IT REPLACES IT.</s></div>
-      </article>
-    </section>
-    <section class="field-section characters" id="personajes">
-      <aside><span>02</span><p>CHARACTERS</p></aside>
-      <div class="character-area">
-        <div class="field-title"><p>Persons of interest</p><h3>Four voices.<br>One incomplete truth.</h3></div>
-        <div class="character-grid">
-          <article><span class="character-code">CLC-01</span><div class="char-portrait ana"></div><h4>Ana</h4><p>An accidental archivist. She has the rare ability to remember what the systems correct.</p><small>STATUS: LOCATED</small></article>
-          <article><span class="character-code">CLC-02</span><div class="char-portrait teo"></div><h4>Teo</h4><p>He knows every path through the village, and none of them appear on the Directorate's maps.</p><small>STATUS: UNREGISTERED</small></article>
-          <article><span class="character-code">DIR-4471</span><div class="char-portrait thomas"></div><h4>Thomas</h4><p>A CONTINUUM official. His smile is the same; his story changes depending on the file.</p><small>STATUS: DUPLICATED</small></article>
-          <article><span class="character-code">CLC-00</span><div class="char-portrait cielo"></div><h4>The sky</h4><p>A territory, a memory, or a promise. Everyone talks about saving it. No one explains from whom.</p><small>STATUS: DISPUTED</small></article>
-        </div>
-      </div>
-    </section>
-    <footer class="field-footer">
-      <p>SALVAR EL CIELO</p><span>End of recovered fragment / The story continues</span><a href="#campo">↑ Back to top</a>
-    </footer>
-  </section>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <footer><a href="#portada">SALVAR EL CIELO</a><p>A NOVEL BY MOISÉS CORRAL · © 2026</p><a class="footer-author" href="https://moisescorral.es/en/" target="_blank" rel="noopener">AUTHOR AND OTHER BOOKS ↗</a><a href="mailto:contacto@moisescorral.es">CONTACT</a></footer>
   <script src="js/app.js"></script>
+  <script>
+    (() => {
+      const trailerPlayer = document.getElementById('trailerPlayer');
+      const trailerLaunch = document.getElementById('trailerLaunch');
+
+      if (trailerPlayer && trailerLaunch) {
+        trailerLaunch.addEventListener('click', (event) => {
+          event.preventDefault();
+          const iframe = document.createElement('iframe');
+          iframe.src = `${trailerPlayer.dataset.embed}&autoplay=1`;
+          iframe.title = 'Official Salvar el cielo trailer';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+          iframe.allowFullscreen = true;
+          trailerPlayer.replaceChildren(iframe);
+        }, { once: true });
+      }
+
+      const portraits = [];
+
+      document.querySelectorAll('.cast-grid article').forEach((article) => {
+        const image = article.querySelector(':scope > .character-photo');
+        const quote = article.querySelector(':scope > blockquote');
+        const name = article.querySelector('h3')?.textContent.trim();
+        if (!image || !quote || !name) return;
+
+        const trigger = document.createElement('button');
+        trigger.type = 'button';
+        trigger.className = 'character-reveal';
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.setAttribute('aria-label', `Show quote about ${name}`);
+
+        const hint = document.createElement('span');
+        hint.className = 'character-reveal-hint';
+        hint.textContent = 'Tap to reveal';
+
+        const revealedQuote = document.createElement('span');
+        revealedQuote.className = 'character-reveal-quote';
+        revealedQuote.textContent = quote.textContent;
+
+        article.insertBefore(trigger, image);
+        trigger.append(image, hint, revealedQuote);
+        quote.remove();
+        portraits.push({ trigger, name });
+
+        trigger.addEventListener('click', () => {
+          const willOpen = !trigger.classList.contains('is-open');
+          portraits.forEach(({ trigger: other, name: otherName }) => {
+            other.classList.remove('is-open');
+            other.setAttribute('aria-expanded', 'false');
+            other.setAttribute('aria-label', `Show quote about ${otherName}`);
+          });
+          if (willOpen) {
+            trigger.classList.add('is-open');
+            trigger.setAttribute('aria-expanded', 'true');
+            trigger.setAttribute('aria-label', `Hide quote about ${name}`);
+          }
+        });
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') return;
+        portraits.forEach(({ trigger, name }) => {
+          trigger.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.setAttribute('aria-label', `Show quote about ${name}`);
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

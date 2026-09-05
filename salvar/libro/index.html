@@ -543,14 +543,10 @@
           <p>Hay historias que empiezan con una promesa. Esta comienza cuando la realidad deja de obedecer.</p>
         </div>
         <figure class="trailer-media reveal">
-          <div class="trailer-video" id="trailerPlayer" data-embed="https://www.youtube.com/embed/2GOiSQpWyjc?rel=0&amp;playsinline=1">
-            <img class="trailer-poster" src="https://i.ytimg.com/vi/2GOiSQpWyjc/maxresdefault.jpg" alt="Fotograma del tráiler oficial de Salvar el cielo" loading="lazy" decoding="async">
-            <a class="trailer-launch" id="trailerLaunch" href="https://www.youtube.com/watch?v=2GOiSQpWyjc" aria-label="Reproducir el tráiler oficial de Salvar el cielo dentro de esta página">
-              <strong>Reproducir tráiler</strong>
-              <small>Una película de Moisés Corral</small>
-            </a>
+          <div class="trailer-video" id="trailerPlayer">
+            <iframe src="https://www.youtube.com/embed/2GOiSQpWyjc?rel=0&amp;playsinline=1" title="Tráiler oficial de Salvar el cielo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <figcaption><span>Salvar el cielo / Tráiler oficial</span><span>Reproducir con sonido</span></figcaption>
+          <figcaption><span>Salvar el cielo / Tráiler oficial</span><a href="https://www.youtube.com/watch?v=2GOiSQpWyjc" target="_blank" rel="noopener">Ver en YouTube ↗</a></figcaption>
         </figure>
       </div>
     </section>
@@ -610,22 +606,6 @@
   <script src="js/app.js"></script>
   <script>
     (() => {
-      const trailerPlayer = document.getElementById('trailerPlayer');
-      const trailerLaunch = document.getElementById('trailerLaunch');
-
-      if (trailerPlayer && trailerLaunch) {
-        trailerLaunch.addEventListener('click', (event) => {
-          event.preventDefault();
-          const iframe = document.createElement('iframe');
-          iframe.src = `${trailerPlayer.dataset.embed}&autoplay=1`;
-          iframe.title = 'Tráiler oficial de Salvar el cielo';
-          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-          iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-          iframe.allowFullscreen = true;
-          trailerPlayer.replaceChildren(iframe);
-        }, { once: true });
-      }
-
       const portraits = [];
 
       document.querySelectorAll('.cast-grid article').forEach((article) => {

@@ -72,6 +72,78 @@
       }
     }
   </style>
+  <style>
+    /* Dirección editorial: retrato monocromo, escala y espacio. */
+    :root{--gold:#c9a45c;--gold2:#e0c486}
+    html{scroll-padding-top:95px}
+    .header{padding:25px 5vw;background:linear-gradient(#050505e8,transparent)}
+    .header .logo{color:#f4efe6;font-size:32px}
+    .header nav{gap:20px}
+    .header nav a{font-size:12px;letter-spacing:1px;text-transform:none}
+    .header a:focus-visible,.hero-alt a:focus-visible{outline:2px solid #e0c486;outline-offset:7px}
+    .hero-alt{position:relative;isolation:isolate;min-height:880px;min-height:max(820px,100svh);overflow:hidden;background:#050505;padding:155px 5vw 200px;display:flex;align-items:center}
+    .portrait{position:absolute;inset:0 0 0 34%;z-index:-2;margin:0}
+    .portrait img{width:100%;height:100%;object-fit:cover;object-position:52% 24%;filter:grayscale(1) contrast(1.08);opacity:.92}
+    .portrait:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050505 0%,#050505b0 14%,transparent 43%),linear-gradient(0deg,#050505 0%,#05050595 14%,transparent 40%),linear-gradient(180deg,#05050555,transparent 25%)}
+    .hero-alt-copy{position:relative;width:100%;padding-bottom:20px}
+    .launch-label{margin:0 0 34px;color:#b8b5ae;font:12px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;display:flex;align-items:center;gap:14px}
+    .launch-label:before{content:"";width:28px;height:1px;background:#c9a45c}
+    .hero-alt h1{margin:0 0 30px;font:400 clamp(100px,13.6vw,214px)/.79 Georgia,'Times New Roman',serif;letter-spacing:-.065em;text-transform:none;color:#f4f0e9}
+    .hero-alt h1 span{display:block}
+    .hero-alt h1 span+span{margin-left:6.5vw}
+    .hero-alt-intro{margin:0;max-width:370px;font:400 clamp(23px,2.2vw,33px)/1.24 Georgia,serif;color:#f4f0e9;letter-spacing:-.025em}
+    .hero-alt-intro em{color:#c9a45c;font-weight:400}
+    .hero-alt-description{max-width:315px;margin:18px 0 25px;font-size:16px;line-height:1.65;color:#aaa8a3}
+    .author-link{display:inline-flex;align-items:center;gap:38px;font-size:14px;padding:10px 0;border-bottom:1px solid #a6987b;color:#eee8dd}
+    .author-link span{font-size:22px;transition:transform .25s}
+    .author-link:hover span{transform:translateX(6px)}
+    .hero-footer{position:absolute;bottom:36px;left:5vw;right:5vw;display:grid;grid-template-columns:.72fr 1fr 1fr;gap:clamp(28px,4vw,68px);align-items:end}
+    .editorial-note{display:flex;border-top:1px solid #ffffff38;padding-top:22px;color:#c3beb4}
+    .editorial-note p{margin:0;font:18px/1.45 Georgia,serif;max-width:300px}
+    .entry-book{display:grid;grid-template-columns:55px 1fr auto;gap:20px;align-items:center;border-top:1px solid #ffffff60;padding:20px 0 0;transition:border-color .25s}
+    .entry-book:hover{border-color:#c9a45c}
+    .entry-book img{width:55px;height:80px;object-fit:cover;box-shadow:0 8px 25px #0008}
+    .entry-book.entry-continuum img{object-position:70% center}
+    .entry-book small{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#c9a45c}
+    .entry-book strong{display:block;margin:7px 0 5px;font:400 29px/1 Georgia,serif;color:#f4efe6}
+    .entry-book p{margin:0;font-size:14px;color:#b8b4ac;line-height:1.4}
+    .entry-book .entry-arrow{font-size:34px;color:#c9a45c;transition:transform .25s}
+    .entry-book:hover .entry-arrow{transform:translateX(5px)}
+    .hero-alt-copy{animation:editorial-arrival 1.1s ease-out both}
+    @keyframes editorial-arrival{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+    @media(min-width:1700px){.hero-alt{padding-top:190px}.hero-alt-copy{max-width:1600px}.portrait{left:37%}}
+    @media(max-width:1050px) and (min-width:851px){.header nav{gap:12px}.hero-alt{min-height:850px}.portrait{left:28%}.hero-alt h1{font-size:14vw}}
+    @media(max-width:850px){
+      .header{padding:22px 6vw}
+      .hero-alt{min-height:1370px;padding:165px 6vw 420px;align-items:flex-start}
+      .portrait{inset:55px 0 0 12%;height:720px}
+      .portrait img{object-position:56% top}
+      .portrait:after{background:linear-gradient(90deg,#050505bb,transparent 40%),linear-gradient(0deg,#050505,transparent 65%),linear-gradient(180deg,#05050555,transparent 20%)}
+      .hero-alt-copy{padding:0}
+      .launch-label{margin-bottom:35px;font-size:12px;letter-spacing:2px}
+      .hero-alt h1{font-size:clamp(86px,18vw,150px);margin-bottom:190px}
+      .hero-alt h1 span+span{margin-left:5vw}
+      .hero-alt-intro{max-width:400px;font-size:31px}
+      .hero-alt-description{max-width:360px}
+      .hero-footer{left:6vw;right:6vw;bottom:35px;gap:25px;grid-template-columns:1fr}
+      .editorial-note{padding-top:18px}
+      .editorial-note p{font-size:17px;max-width:none}
+      .entry-book{gap:17px}
+    }
+    @media(max-width:480px){
+      .hero-alt{min-height:1320px;padding-top:135px}
+      .hero-alt h1{font-size:22vw;line-height:.84;margin-bottom:225px}
+      .portrait{left:0;height:690px}
+      .portrait img{object-position:57% top}
+      .launch-label{font-size:12px;letter-spacing:1.6px}
+      .hero-alt-intro{font-size:28px;max-width:310px}
+      .hero-alt-description{font-size:16px}
+      .entry-book strong{font-size:27px}
+      .entry-book p{font-size:14px}
+      .editorial-note p{font-size:16px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-alt-copy{animation:none}.hero-alt *{transition:none!important}}
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -122,20 +194,40 @@
     <a href="/en/" lang="en" hreflang="en" aria-label="View this website in English">EN</a>
   </div>
 </header>
-<main id="inicio" class="hero hero-rusia">
-  <section class="hero-text">
-    <p class="eyebrow">Moisés Corral</p>
-    <h1>Autor de Salvar el cielo</h1>
-    <p class="subtitle">Ficción, historia, geopolítica y otros mundos posibles.</p>
-    <p class="description">Aquí no puedes esconderte.<br>Ni siquiera del tiempo.</p>
-    <div class="hero-buttons">
-      <a href="/salvar/" class="button">Entrar en Salvar el cielo</a>
-      <a href="#libros" class="button secondary">Ver todos los libros</a>
+<main id="inicio" class="hero-alt">
+  <figure class="portrait">
+    <img src="assets/moises.jpg" alt="Retrato en blanco y negro de Moisés Corral" fetchpriority="high">
+  </figure>
+  <section class="hero-alt-copy" aria-labelledby="author-title">
+    <p class="launch-label">Moisés Corral · Web oficial</p>
+    <h1 id="author-title"><span>Moisés</span><span>Corral.</span></h1>
+    <p class="hero-alt-intro">La realidad es solo<br><em>el punto de partida.</em></p>
+    <p class="hero-alt-description">Ficción, historia y geopolítica.<br>Libros para explorar otros mundos<br>y entender un poco mejor este.</p>
+    <a href="#libros" class="author-link">Descubrir mis libros <span aria-hidden="true">↗</span></a>
+  </section>
+  <div class="hero-footer">
+    <div class="editorial-note">
+      <p>Aquí no puedes esconderte.<br>Ni siquiera del tiempo.</p>
     </div>
-  </section>
-  <section class="hero-image">
-    <img src="assets/moises.jpg" alt="Moisés Corral, autor de Salvar el cielo">
-  </section>
+    <a class="entry-book entry-continuum" href="/salvar/" aria-label="Entrar en la web del mundo de CONTINUUM">
+      <img src="salvar/assets/promohero.avif" alt="Entorno tecnológico y luminoso de CONTINUUM" width="55" height="80">
+      <div>
+        <small>Experiencia inmersiva</small>
+        <strong>Entrar en CONTINUUM</strong>
+        <p>Descubre el mundo perfecto.</p>
+      </div>
+      <span class="entry-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="entry-book" href="/salvar/libro/" aria-label="Entrar en la web del libro Salvar el cielo">
+      <img src="Portadas%20libros/salvarelcielo.avif" alt="Portada de Salvar el cielo" width="55" height="80">
+      <div>
+        <small>El libro</small>
+        <strong>Salvar el cielo</strong>
+        <p>Historia, personajes y lugares.</p>
+      </div>
+      <span class="entry-arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
 </main>
 <section id="libros" class="books section-silence">
   <div class="section-heading">

@@ -365,6 +365,7 @@
       border-bottom:1px solid rgba(255,255,255,.2);
     }
     .edition-card{
+      --edition-glow:213,117,89;
       min-width:0;
       min-height:430px;
       padding:30px 26px 28px;
@@ -372,9 +373,30 @@
       flex-direction:column;
       border-right:1px solid rgba(255,255,255,.2);
       position:relative;
+      overflow:hidden;
+      isolation:isolate;
+      transition:background-color .4s ease,box-shadow .4s ease;
     }
+    .edition-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+      background:radial-gradient(circle at 50% 28%,rgba(var(--edition-glow),.19),transparent 48%);
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .45s ease,transform .55s cubic-bezier(.2,.7,.2,1);
+    }
+    .edition-card > *{position:relative;z-index:1}
+    .edition-card:hover,.edition-card:focus-within{
+      background-color:rgba(var(--edition-glow),.055);
+      box-shadow:inset 0 3px 0 rgba(var(--edition-glow),.75),inset 0 -20px 45px rgba(var(--edition-glow),.055);
+    }
+    .edition-card:hover::before,.edition-card:focus-within::before{opacity:1;transform:translateY(0)}
     .edition-card:last-child{border-right:0}
     .edition-card.special{
+      --edition-glow:179,75,51;
       background:#d9d1bd;
       color:#11110f;
       box-shadow:inset 0 4px 0 #b34b33;
@@ -386,6 +408,7 @@
       overflow:hidden;
       background:#0d0e10;
       border:1px solid rgba(255,255,255,.16);
+      transition:transform .55s cubic-bezier(.2,.7,.2,1),border-color .35s ease,box-shadow .35s ease;
     }
     .special .edition-visual{border-color:rgba(17,17,15,.18)}
     .edition-visual img{
@@ -395,7 +418,12 @@
       object-fit:cover;
       transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .35s ease;
     }
-    .edition-card:hover .edition-visual img{transform:scale(1.018)}
+    .edition-card:hover .edition-visual,.edition-card:focus-within .edition-visual{
+      transform:translateY(-7px);
+      border-color:rgba(var(--edition-glow),.72);
+      box-shadow:0 18px 36px rgba(0,0,0,.28),0 0 28px rgba(var(--edition-glow),.12);
+    }
+    .edition-card:hover .edition-visual img,.edition-card:focus-within .edition-visual img{transform:scale(1.055);filter:saturate(1.08) contrast(1.04)}
     .edition-card.special .edition-visual img{filter:saturate(.88)}
     .edition-number,.edition-meta{
       font:8px/1.6 'Space Mono',monospace;
@@ -408,7 +436,10 @@
       margin:0 0 22px;
       font:300 clamp(38px,3.3vw,54px)/.9 'Spectral',serif;
       letter-spacing:-.04em;
+      transition:transform .35s ease,color .35s ease;
     }
+    .edition-card:hover h3,.edition-card:focus-within h3{transform:translateY(-3px);color:#f2b19c}
+    .edition-card.special:hover h3,.edition-card.special:focus-within h3{color:#9b3e2a}
     .edition-card p{
       margin:0 0 28px;
       font:16px/1.65 'Spectral',serif;
@@ -439,23 +470,29 @@
     }
     .edition-action{
       width:100%;
-      min-height:52px;
-      padding:15px 16px;
+      min-height:60px;
+      margin-top:auto;
+      padding:17px 18px;
       display:flex;
       align-items:center;
       justify-content:space-between;
       border:1px solid #d77559;
       background:transparent;
       color:inherit;
-      font:8px 'Space Mono',monospace;
-      letter-spacing:.1em;
+      font:700 clamp(12px,.9vw,14px)/1.25 'Space Mono',monospace;
+      letter-spacing:.08em;
       text-transform:uppercase;
-      transition:background .25s ease,color .25s ease;
+      overflow:hidden;
+      transition:background .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease;
     }
     a.edition-action:hover,a.edition-action:focus-visible{
       background:#d77559;
       color:#11110f;
+      transform:translateY(-2px);
+      box-shadow:0 12px 24px rgba(213,117,89,.18);
     }
+    a.edition-action span:last-child{font-size:19px;line-height:1;transition:transform .25s ease}
+    a.edition-action:hover span:last-child,a.edition-action:focus-visible span:last-child{transform:translate(3px,-3px)}
     a.edition-action:focus-visible{outline:2px solid #eee9dc;outline-offset:4px}
     button.edition-action{
       border-color:#8e3827;
@@ -464,6 +501,7 @@
       cursor:not-allowed;
       opacity:1;
     }
+    button.edition-action span:last-child{font-size:18px;line-height:1}
     .sold-out-stamp{
       position:absolute;
       top:26px;
@@ -499,6 +537,10 @@
       .edition-meta{margin-top:26px}
       .coming-soon{margin-top:28px;padding-top:18px}
       .coming-soon strong{font-size:28px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .edition-card,.edition-card::before,.edition-visual,.edition-visual img,.edition-card h3,.edition-action,.edition-action span{transition:none!important}
+      .edition-card:hover .edition-visual,.edition-card:focus-within .edition-visual,.edition-card:hover h3,.edition-card:focus-within h3,a.edition-action:hover,a.edition-action:focus-visible{transform:none}
     }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Salvar el cielo","author":{"@type":"Person","name":"Moisés Corral"},"inLanguage":"es","url":"https://moisescorral.es/salvar/libro/","description":"En CONTINUUM nadie envejece, nadie enferma y nadie muere. Hasta ahora."}</script>
@@ -561,8 +603,8 @@
         <div>
           <h2 id="purchaseTitle">Elige cómo entrar<br>en la historia.</h2>
           <div class="purchase-head-copy">
-            <p>Cuatro ediciones de <em>Salvar el cielo</em>. La primera fue una tirada irrepetible; las demás llegarán muy pronto.</p>
-            <p>La tapa dura, la tapa blanda y el eBook se encuentran en preparación para su lanzamiento.</p>
+            <p>Cuatro ediciones de <em>Salvar el cielo</em>. La edición especial fue una tirada irrepetible y ya está agotada.</p>
+            <p>La tapa dura, la tapa blanda y el eBook ya están disponibles en Amazon.</p>
           </div>
         </div>
       </header>
@@ -581,21 +623,21 @@
           <figure class="edition-visual"><img src="assets/publicidad/tapadura.avif" alt="Edición en tapa dura de Salvar el cielo" loading="lazy"></figure>
           <h3>Tapa<br>dura</h3>
           <p>La edición de coleccionista para quienes quieren conservar la historia en su formato más cuidado.</p>
-          <div class="coming-soon" aria-label="Tapa dura disponible próximamente"><span>Lanzamiento</span><strong>Próximamente</strong></div>
+          <a class="edition-action" href="https://link.amazon/B07OitkPK" target="_blank" rel="nofollow sponsored noopener"><span>Comprar en Amazon</span><span aria-hidden="true">↗</span></a>
         </article>
         <article class="edition-card">
           <span class="edition-number">03 / Edición física</span>
           <figure class="edition-visual"><img src="assets/publicidad/tapablanda.avif" alt="Edición en tapa blanda de Salvar el cielo" loading="lazy"></figure>
           <h3>Tapa<br>blanda</h3>
           <p>Una edición flexible y ligera, pensada para acompañarte dentro y fuera de Campo la Carrera.</p>
-          <div class="coming-soon" aria-label="Tapa blanda disponible próximamente"><span>Lanzamiento</span><strong>Próximamente</strong></div>
+          <a class="edition-action" href="https://link.amazon/B0gaqX09f" target="_blank" rel="nofollow sponsored noopener"><span>Comprar en Amazon</span><span aria-hidden="true">↗</span></a>
         </article>
         <article class="edition-card">
           <span class="edition-number">04 / Edición digital</span>
           <figure class="edition-visual"><img src="assets/publicidad/ebook.avif" alt="Edición eBook Kindle de Salvar el cielo mostrada en un lector electrónico" loading="lazy"></figure>
           <h3>eBook<br>Kindle</h3>
           <p>La historia completa en formato digital para empezar a leerla al instante en Kindle.</p>
-          <div class="coming-soon" aria-label="eBook Kindle disponible próximamente"><span>Lanzamiento</span><strong>Próximamente</strong></div>
+          <a class="edition-action" href="https://link.amazon/B0aqulfMk" target="_blank" rel="nofollow sponsored noopener"><span>Comprar en Amazon</span><span aria-hidden="true">↗</span></a>
         </article>
       </div>
     </section>
